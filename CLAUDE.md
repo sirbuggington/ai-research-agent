@@ -214,7 +214,7 @@ Set up the browser automation tab and check each platform's availability.
    - **Claude.ai** (`claude.ai`): Look for chat input area, user avatar, or model selector.
    - **Gemini** (`gemini.google.com`): Look for chat input area, user avatar.
    - **ChatGPT** (`chatgpt.com`): Look for message input box, user menu.
-   - **Grok** (`grok.x.ai`): Look for chat input, user indicators.
+   - **Grok** (`grok.com`): Look for chat input, user indicators.
 
 3. Write `preflight.md`:
    ```markdown
@@ -276,10 +276,14 @@ Claude and Gemini are first because their advanced modes (Research / Deep Resear
 1. Update manifest: claude status -> `"running"`, set started_at, increment attempts.
 2. In `automationTabId`, navigate to `claude.ai`.
 3. Start a fresh conversation.
-4. **Detect mode:** Look for a Research mode button, toggle, or option.
-   - If found and activated: set mode_used -> `"research"`
-   - If not found: use standard Claude, set mode_used -> `"standard"`, add note.
+4. **Activate Research mode:**
+   - Click the `+` button in the input area
+   - Click "Research" from the menu
+   - A research icon should appear next to the `+` button confirming activation
+   - Set mode_used -> `"research"`
+   - If "Research" option is not found in the menu: use standard Claude, set mode_used -> `"standard"`, add note.
 5. Enter the rendered prompt from `prompts/claude_prompt.md` and submit.
+6. **Claude may ask clarifying questions** before starting research. If it does, answer them based on the research brief (accept its proposed research plan or confirm its direction). Then wait for the full research to run.
 6. Wait for response (see polling and stall rules above).
 7. Extract the final assistant response. Save to `responses/claude_response.md`.
 8. Update manifest: status -> `"success"`, set ended_at.
@@ -291,11 +295,15 @@ Claude and Gemini are first because their advanced modes (Research / Deep Resear
 1. Update manifest: gemini status -> `"running"`, set started_at, increment attempts.
 2. In `automationTabId`, navigate to `gemini.google.com`.
 3. Start a fresh conversation.
-4. **Detect mode:** Look for a Deep Research button, toggle, or option.
-   - If found and activated: set mode_used -> `"deep_research"`
-   - If not found: use standard Gemini, set mode_used -> `"standard"`, add note.
+4. **Activate Deep Research mode:**
+   - Ensure "Thinking" is selected in the mode dropdown (right side of input)
+   - Click the "Tools" button (to the right of the `+` button)
+   - Click "Deep research" from the tools menu
+   - A "Deep research" badge should appear in the input area confirming activation
+   - Set mode_used -> `"deep_research"`
+   - If "Deep research" is not in the tools menu: use standard Gemini, set mode_used -> `"standard"`, add note.
 5. Enter the rendered prompt from `prompts/gemini_prompt.md` and submit.
-6. Wait for response. Deep Research can run 30+ minutes or over an hour — this is normal if progress indicators are updating.
+6. **Gemini will present a research plan.** Click "Start" or the equivalent approval button to begin the deep research. Wait for research to complete — this can run 30+ minutes or over an hour. This is normal if progress indicators are updating.
 7. Extract the final assistant response. Save to `responses/gemini_response.md`.
 8. Update manifest: status -> `"success"`, set ended_at.
 9. Update Notion: Gemini -> "Done", Platforms -> update count.
@@ -306,11 +314,15 @@ Claude and Gemini are first because their advanced modes (Research / Deep Resear
 1. Update manifest: chatgpt status -> `"running"`, set started_at, increment attempts. Do NOT set mode_used yet.
 2. In `automationTabId`, navigate to `chatgpt.com`.
 3. Start a fresh conversation.
-4. **Detect mode:** Look for ChatGPT Plus indicators (model selector showing GPT-4/GPT-4o, browsing toggle).
-   - If Plus/browsing detected: set mode_used -> `"plus_with_browsing"`
-   - If free tier detected: set mode_used -> `"free"`, add note.
+4. **Activate Deep Research mode:**
+   - Click the `+` button in the input area
+   - Click "Deep research" from the menu
+   - A "Deep research" badge should appear confirming activation
+   - The input placeholder should change to "Get a detailed report"
+   - Set mode_used -> `"deep_research"`
+   - If "Deep research" is not in the menu: use standard ChatGPT, set mode_used -> `"standard"`, add note.
 5. Enter the rendered prompt from `prompts/chatgpt_prompt.md` and submit.
-6. Wait for response (see polling and stall rules above).
+6. **ChatGPT may present a research plan to approve.** Click the approval/start button to begin. Wait for response (see polling and stall rules above).
 7. Extract the final assistant response. Save to `responses/chatgpt_response.md`.
 8. Update manifest: status -> `"success"`, set ended_at.
 9. Update Notion: ChatGPT -> "Done", Platforms -> update count.
@@ -319,11 +331,13 @@ Claude and Gemini are first because their advanced modes (Research / Deep Resear
 #### 5d: Grok
 
 1. Update manifest: grok status -> `"running"`, set started_at, increment attempts. Do NOT set mode_used yet.
-2. In `automationTabId`, navigate to `grok.x.ai`.
+2. In `automationTabId`, navigate to `grok.com`.
 3. Start a fresh conversation.
-4. **Detect mode:** Look for Grok Premium or SuperGrok indicators.
-   - If premium detected: set mode_used -> `"premium"`
-   - If no premium indicators: set mode_used -> `"free"`
+4. **Set Expert mode:**
+   - Click the mode selector dropdown (shows current mode like "Expert" or "Fast")
+   - Select "Expert" (Thinks hard - Grok 4.20) if not already selected
+   - Set mode_used -> `"expert"`
+   - Grok does not have a separate research mode — it will do research when prompted to do so.
 5. Enter the rendered prompt from `prompts/grok_prompt.md` and submit.
 6. Wait for response (see polling and stall rules above).
 7. Extract the final assistant response. Save to `responses/grok_response.md`.

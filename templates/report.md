@@ -1,34 +1,32 @@
-# Research Report: {{TOPIC}}
+# Research Report: [Title]
 
-*Generated: {{DATE}}*
-*Session: {{SESSION_ID}}*
+*Generated: [Date]*
+*Session: [Session ID]*
 
-**Platforms queried:** {{PLATFORMS_USED}}
-{{PLATFORMS_SKIPPED_SECTION}}
+**Platforms queried:** [list platforms that responded successfully]
+<!-- If any platforms were skipped, failed, or timed out, add a line: -->
+<!-- **Platforms not included:** [list] ([reason for each]) -->
 
 ---
 
 ## Executive Summary
 
-{{EXECUTIVE_SUMMARY}}
+<!-- 2-3 paragraphs synthesizing the most important findings ACROSS all sources. -->
+<!-- Identify the overarching narrative. Do not summarize each AI separately. -->
 
 ---
 
 ## Key Findings
 
-<!-- Organize by THEME, not by platform. Weave insights from all sources together. -->
+<!-- Organize by THEME, not by platform. Use 3-6 themes depending on complexity. -->
+<!-- Weave insights from multiple sources together under each theme heading. -->
+<!-- Add or remove theme sections as needed — 3 is a starting point, not a limit. -->
 
-### {{THEME_1}}
+### [Theme 1]
 
-{{FINDINGS_1}}
+### [Theme 2]
 
-### {{THEME_2}}
-
-{{FINDINGS_2}}
-
-### {{THEME_3}}
-
-{{FINDINGS_3}}
+### [Theme 3]
 
 ---
 
@@ -37,33 +35,25 @@
 ### Areas of Agreement
 <!-- Points where multiple platforms converged — higher confidence -->
 
-{{AGREEMENT}}
-
 ### Areas of Disagreement or Uncertainty
 <!-- Points where platforms gave conflicting info — flag for human verification -->
 
-{{DISAGREEMENT}}
-
 ### Claims Requiring Verification
-<!-- Specific claims that were made by only one source, or that conflict with other sources -->
-
-{{VERIFICATION_NEEDED}}
+<!-- Specific claims from only one source, or that conflict with other sources -->
 
 ---
 
 ## Unique Insights
 
-<!-- Notable findings that only one platform surfaced — attributed to source -->
-
-{{UNIQUE_INSIGHTS}}
+<!-- Notable findings that only one platform surfaced — attribute to source -->
+<!-- e.g., "Grok noted that..." or "Gemini found a source indicating..." -->
 
 ---
 
 ## Sources and Citations
 
 <!-- All URLs, papers, reports, and named sources from across all responses -->
-
-{{SOURCES}}
+<!-- IMPORTANT: Label as "Sources cited by platforms (not independently verified)" -->
 
 ---
 
@@ -71,27 +61,33 @@
 
 <!-- Follow-up research topics raised by this investigation -->
 
-{{FURTHER_QUESTIONS}}
-
 ---
 
 ## Confidence Assessment
 
 <!-- How confident should the reader be in these findings? -->
 
-- **Platforms responded:** {{PLATFORM_COUNT}}/4
-- **Source quality:** {{SOURCE_QUALITY_NOTE}}
-- **Topic maturity:** {{TOPIC_MATURITY_NOTE}}
+- **Platforms responded:** [N]/4
+- **Modes used:** [e.g., Claude Research, Gemini Deep Research, ChatGPT Plus w/ browsing, Grok free]
+- **Source quality:** [assessment]
+- **Topic maturity:** [well-established / emerging / rapidly evolving]
 
-{{CONFIDENCE_NOTES}}
+<!-- Note any of: -->
+<!-- - Platforms that failed, timed out, or were skipped -->
+<!-- - Prompts that had to be shortened -->
+<!-- - Partial extractions -->
+<!-- - Mode fallbacks (standard instead of Research/Deep Research) -->
 
 ---
 
-## Appendix: Raw Responses
+## Appendix
 
-| Platform | Status | File |
-|----------|--------|------|
-| Claude | {{CLAUDE_STATUS}} | [claude_response.md](./responses/claude_response.md) |
-| Gemini | {{GEMINI_STATUS}} | [gemini_response.md](./responses/gemini_response.md) |
-| ChatGPT | {{CHATGPT_STATUS}} | [chatgpt_response.md](./responses/chatgpt_response.md) |
-| Grok | {{GROK_STATUS}} | [grok_response.md](./responses/grok_response.md) |
+<!-- Table showing each platform's final status -->
+<!-- Note that full responses are stored locally in the session folder -->
+
+| Platform | Status | Mode Used |
+|----------|--------|-----------|
+| Claude   |        |           |
+| Gemini   |        |           |
+| ChatGPT  |        |           |
+| Grok     |        |           |

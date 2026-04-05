@@ -1,0 +1,13 @@
+# Research output (large, generated)
+# Uncomment the line below if you don't want to track research sessions in git
+# research/
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
+*~

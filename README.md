@@ -28,15 +28,18 @@ All four platforms are driven through a real Chrome window using the Claude in C
 
 **Supported operating systems:** Windows 10/11, macOS, Linux. The setup flow asks which OS you're on and adjusts path examples accordingly. All shell commands are bash-compatible (Windows users run Claude Code in Git Bash, which is installed automatically with Claude Code).
 
-## Install
+## Quick Start
 
-1. Clone this repo to wherever you want it to live:
+1. In your terminal, clone this repo:
    ```
-   git clone <this-repo-url>
+   git clone https://github.com/sirbuggington/ai-research-agent.git
    cd ai-research-agent
    ```
-2. Open the folder in Claude Code (`claude` from inside the directory).
-3. In your first chat, just say **"setup"** (or "get started", "how do I begin", etc.). Claude will offer a numbered list of setup tasks and do whichever ones you pick — folder creation, Chrome setup walkthrough, account checklist, optional Notion integration.
+2. Still in your terminal, launch Claude Code from inside the project folder:
+   ```
+   claude
+   ```
+3. In your first chat, just say **"setup"** (or "get started", "how do I begin", etc.). A short questionnaire will pop up asking your operating system and which setup tasks you want handled — folder scaffold, Chrome setup walkthrough, account checklist, optional Notion integration. Pick your answers and Claude does the rest.
 
 That's the entire install. The agent's own setup flow is the install guide.
 

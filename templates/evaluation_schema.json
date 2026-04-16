@@ -1,0 +1,118 @@
+{
+  "$schema": "Evaluation schema for AI Research Agent sessions",
+  "evaluation_version": "1.0",
+  "session_id": "string — matches manifest session_id",
+  "evaluated_at": "ISO 8601 timestamp",
+
+  "intent_scores": {
+    "brief_fidelity": {
+      "score": "1-5 or null",
+      "user_intents_count": "number — distinct things user asked about",
+      "sub_questions_count": "number — sub-questions in research brief",
+      "mapping": [
+        {
+          "sub_question": "text of sub-question",
+          "classification": "traced | inferred | system-added",
+          "origin": "quoted phrase from user request, or inference explanation, or 'no traceable origin'"
+        }
+      ],
+      "user_intents_coverage": [
+        {
+          "intent": "text of what user asked about",
+          "status": "represented | missing"
+        }
+      ]
+    },
+
+    "synthesis_focus": {
+      "score": "1-5 or null",
+      "limited_evidence": "boolean — true if only 1 platform succeeded",
+      "report_sections": [
+        {
+          "section_title": "heading text",
+          "classification": "on-topic | tangential | off-topic",
+          "sub_questions_addressed": ["list of sub-question texts this section covers"]
+        }
+      ],
+      "executive_summary_on_target": "boolean"
+    }
+  },
+
+  "platform_scores": {
+    "claude": {
+      "response_relevance": {
+        "score": "1-5 or null",
+        "na_reason": "string or null — reason if N/A",
+        "sub_question_coverage": [
+          {
+            "sub_question": "text",
+            "classification": "substantive | passing | absent",
+            "evidence": "section/quote from response, or 'not found'"
+          }
+        ]
+      },
+      "source_relevance": {
+        "score": "1-5 or null",
+        "na_reason": "string or null",
+        "total_sources": "number",
+        "evaluated_sources": "number",
+        "classifications": [
+          {
+            "source": "URL or named reference",
+            "classification": "specific | generic | ambiguous",
+            "reasoning": "brief explanation"
+          }
+        ],
+        "confidence_note": "string or null — e.g. 'most titles too ambiguous'"
+      },
+      "prompt_compliance": {
+        "score": "1-5 or null",
+        "na_reason": "string or null",
+        "deliverables": [
+          {
+            "deliverable": "text from prompt template",
+            "status": "present | absent"
+          }
+        ]
+      }
+    },
+    "gemini": "same structure as claude",
+    "chatgpt": "same structure as claude",
+    "grok": "same structure as claude"
+  },
+
+  "execution_metrics": {
+    "session_duration_minutes": "number",
+    "platforms_succeeded": "0-4",
+    "platforms_failed": "0-4",
+    "platforms_timed_out": "0-4",
+    "platforms_skipped": "0-4",
+    "retry_count": "number — sum of (attempts-1) across platforms",
+    "context_window_exhausted": "boolean",
+    "low_confidence": "boolean — true if <2 platforms succeeded"
+  },
+
+  "platform_metrics": {
+    "claude": {
+      "response_length_chars": "number",
+      "source_count": "number",
+      "duration_minutes": "number",
+      "mode_used": "string"
+    },
+    "gemini": "same structure",
+    "chatgpt": "same structure",
+    "grok": "same structure"
+  },
+
+  "prompt_hashes": {
+    "system": "string — first 8 chars of cksum",
+    "claude": "string",
+    "gemini": "string",
+    "chatgpt": "string",
+    "grok": "string"
+  },
+
+  "topic_category": "tech | design | science | health | business | policy | culture | other",
+
+  "self_evaluation_notes": "string — free-text summary of key observations from the evaluation"
+}

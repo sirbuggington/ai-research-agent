@@ -1,0 +1,14 @@
+{
+  "_comment": "Copy this file to config.local.json and fill in your values. config.local.json is gitignored.",
+
+  "chrome_profile_name": "Default",
+  "_chrome_profile_help": "Name of the Chrome profile signed into all 4 AI platforms. Use a dedicated profile if possible. Default Chrome profile is named 'Default'.",
+
+  "notion": {
+    "enabled": false,
+    "database_id": "",
+    "data_source_id": "",
+    "dashboard_page_id": ""
+  },
+  "_notion_help": "Optional. If enabled, the agent will mirror session status to a Notion database and append a summary toggle to a dashboard page. Setup steps are in README.md."
+}

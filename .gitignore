@@ -1,6 +1,17 @@
-# Research output (large, generated)
-# Uncomment the line below if you don't want to track research sessions in git
-# research/
+# Local user config (Notion IDs, Chrome profile name) — never commit
+config.local.json
+
+# Research output (each user generates their own; can be large)
+research/*
+!research/.gitkeep
+
+# Browser download artifacts (intermediate files during extraction)
+Downloads/*
+!Downloads/.gitkeep
+
+# Learning data accumulates per user — start fresh on clone
+learning/ledger.json
+learning/adjustments.json
 
 # OS files
 Thumbs.db

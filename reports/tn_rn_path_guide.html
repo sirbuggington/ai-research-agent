@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tennessee RN Path Guide</title>
-  <meta name="description" content="Plain-English Tennessee RN pathway guide comparing Charter Oak with legitimate RN routes.">
+  <title>Erlanger PCT RN Speed Guide</title>
+  <meta name="description" content="Mobile-first guide for an Erlanger PCT comparing the fastest legitimate RN paths near Chattanooga.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230e3b43'/%3E%3Cpath d='M18 32h28M32 18v28' stroke='%23f8fafc' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
   <style>
     :root {
@@ -268,6 +268,11 @@
       color: var(--coral);
       font-weight: 900;
       font-size: 1.3rem;
+    }
+
+    .status-icon.good-status {
+      background: var(--teal-soft);
+      color: var(--teal);
     }
 
     .status-lockup h2 {
@@ -805,6 +810,12 @@
         position: static;
       }
 
+      .topbar-inner {
+        gap: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+      }
+
       section {
         scroll-margin-top: 18px;
       }
@@ -816,19 +827,27 @@
       }
 
       .hero {
-        padding-top: 28px;
+        padding-top: 20px;
       }
 
       .hero h1 {
-        font-size: 2.2rem;
+        font-size: 1.9rem;
+        line-height: 1.08;
+      }
+
+      .hero p {
+        font-size: 1rem;
+        margin-top: 12px;
+        line-height: 1.45;
       }
 
       nav {
         width: 100%;
-        overflow-x: visible;
-        flex-wrap: wrap;
-        gap: 4px;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        gap: 6px;
         padding-bottom: 2px;
+        -webkit-overflow-scrolling: touch;
       }
 
       .hero-actions .ghost-btn,
@@ -836,6 +855,14 @@
       .filter-btn {
         white-space: normal;
         text-align: center;
+      }
+
+      .hero-actions > * {
+        flex: 1 1 100%;
+      }
+
+      .hero-actions .ghost-btn {
+        flex-basis: calc(50% - 5px);
       }
 
       .section-head {
@@ -857,16 +884,84 @@
         grid-template-columns: 1fr;
       }
 
+      .mini-card,
+      .path-step,
+      .meta-item {
+        min-height: auto;
+      }
+
+      .stat-list {
+        gap: 8px;
+        margin: 16px 0;
+      }
+
+      .stat {
+        grid-template-columns: 30px 1fr;
+        gap: 8px;
+        padding: 10px;
+      }
+
+      .stat .icon {
+        width: 30px;
+        height: 30px;
+      }
+
+      .verdict-panel,
+      .panel,
+      .option-card,
+      .mini-card {
+        padding: 14px;
+      }
+
+      .option-meta {
+        gap: 0;
+      }
+
+      .meta-item {
+        display: grid;
+        grid-template-columns: 72px minmax(0, 1fr);
+        gap: 8px;
+        padding: 9px 0;
+        border: 0;
+        border-top: 1px solid var(--line);
+        border-radius: 0;
+        background: transparent;
+      }
+
+      .meta-item small {
+        margin-bottom: 0;
+      }
+
       nav a {
         min-height: 44px;
         padding: 6px 7px;
         font-size: .88rem;
       }
+
+      .primary-btn,
+      .ghost-btn,
+      .filter-btn,
+      .scenario-btn,
+      .link-row a,
+      .source-row a {
+        min-height: 44px;
+      }
+
+      .source-row a {
+        display: inline-flex;
+        align-items: center;
+      }
+
+      .option-card h3,
+      .meta-item strong,
+      .source-row strong {
+        overflow-wrap: anywhere;
+      }
     }
 
     @media (max-width: 380px) {
       .hero h1 {
-        font-size: 2.05rem;
+        font-size: 1.8rem;
       }
     }
 
@@ -938,14 +1033,15 @@
             <path d="M12 4v16M4 12h16" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
           </svg>
         </span>
-        TN RN Path Guide
+        Erlanger RN Guide
       </a>
       <nav aria-label="Page sections">
         <a href="#verdict">Verdict</a>
-        <a href="#finder">Path finder</a>
-        <a href="#compare">Compare</a>
-        <a href="#questions">Questions</a>
-        <a href="#sources">Sources</a>
+        <a href="#next">Plan</a>
+        <a href="#finder">Find</a>
+        <a href="#compare">Paths</a>
+        <a href="#questions">Ask</a>
+        <a href="#sources">Links</a>
       </nav>
     </div>
   </header>
@@ -954,13 +1050,14 @@
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div>
-          <h1>Best path to become an RN in Tennessee</h1>
+          <h1>Fastest RN path for an Erlanger PCT</h1>
           <p>
-            For a Tennessee resident starting from zero college credits: skip Charter Oak
-            and start with a Tennessee Board-approved public ADN/AAS RN program.
+            For a Chattanooga PCT earning about $21/hour on night shift: the fastest
+            legitimate route is a Board-approved ADN/ASN that can start soon.
+            RN-to-BSN comes later.
           </p>
           <div class="hero-actions">
-            <a class="primary-btn" href="#next">Action plan</a>
+            <a class="primary-btn" href="#next">Next 7 days</a>
             <button class="ghost-btn" type="button" id="copySummaryBtn">Copy summary</button>
             <button class="ghost-btn" type="button" id="printBtn">Save PDF</button>
           </div>
@@ -970,10 +1067,10 @@
           <div>
             <div class="verdict-top">
               <div class="status-lockup">
-                <div class="status-icon" aria-hidden="true">X</div>
+                <div class="status-icon good-status" aria-hidden="true">1</div>
                 <div>
-                  <h2>Do not start with Charter Oak.</h2>
-                  <p>It is an RN-to-BSN completion program, not a starter RN program.</p>
+                  <h2>Speed-first answer: private ADN/ASN, if vetted.</h2>
+                  <p>South, Casa Loma, or Galen may beat waiting for a public cohort if cost, commute, clinicals, and Erlanger coverage work.</p>
                 </div>
               </div>
             </div>
@@ -983,23 +1080,23 @@
                 <span class="icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 6.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>
-                <div><strong>Best first target</strong><p>Nearby public community college RN programs approved by the Tennessee Board.</p></div>
+                <div><strong>Fastest plausible RN</strong><p>Private ADN/ASN could reach RN in 2028 if she starts quickly and avoids delays.</p></div>
               </div>
               <div class="stat">
                 <span class="icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M6 7h9.5a3.5 3.5 0 010 7H8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg>
                 </span>
-                <div><strong>Cheapest likely route</strong><p>Community college ADN/AAS plus FAFSA and Tennessee/Pell aid if eligible.</p></div>
+                <div><strong>Safer local route</strong><p>Chattanooga State day track plus Dalton/GNTC backups likely points to mid-2029.</p></div>
               </div>
               <div class="stat">
                 <span class="icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M7 20V8l5-5 5 5v12M4 20h16" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>
-                <div><strong>Online reality check</strong><p>Some classes may be online. RN labs and clinicals are in person.</p></div>
+                <div><strong>Pay bump option</strong><p>TCAT LPN can raise pay sooner, but may not be the fastest final RN route.</p></div>
               </div>
             </div>
           </div>
-          <p class="date">Research dated June 3, 2026. Recheck approval, costs, deadlines, and accreditation before enrolling.</p>
+          <p class="date">Updated June 3, 2026. Recheck start dates, approval, costs, Erlanger benefits, and clinical locations before enrolling.</p>
         </aside>
       </div>
     </section>
@@ -1008,39 +1105,39 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Start here</h2>
-          <p>The first decision is simple: choose a real RN-starting program, not an RN-to-BSN completion program.</p>
+          <p>Do not choose one school until these unknowns are in writing.</p>
         </div>
 
         <div class="quick-grid">
           <article class="mini-card">
-            <span class="tag bad">Avoid now</span>
-            <h3>Charter Oak is for current RNs</h3>
-            <p>It does not train a beginner or qualify her for the RN licensing exam.</p>
+            <span class="tag good">First call</span>
+            <h3>Ask Erlanger what it pays</h3>
+            <p>Tuition help can make a private program worth checking.</p>
           </article>
           <article class="mini-card">
-            <span class="tag good">Best fit</span>
-            <h3>Public ADN/AAS first</h3>
-            <p>Usually the lowest-cost real RN path from zero credits.</p>
+            <span class="tag warn">Fastest</span>
+            <h3>Compare private ADN/ASN</h3>
+            <p>Speed only matters if clinicals, cost, and approval check out.</p>
           </article>
           <article class="mini-card">
-            <span class="tag info">Possible backup</span>
-            <h3>WGU Tennessee prelicensure BSN</h3>
-            <p>Worth checking, but still has in-person labs/clinicals and costs more.</p>
+            <span class="tag info">Safer</span>
+            <h3>Apply local too</h3>
+            <p>ChattState, Dalton State, and GNTC reduce one-school risk.</p>
           </article>
           <article class="mini-card">
-            <span class="tag future">Later step</span>
-            <h3>RN-to-BSN after licensure</h3>
-            <p>After RN licensure, compare online BSN options and employer tuition help.</p>
+            <span class="tag future">Careful</span>
+            <h3>Online credits are limited</h3>
+            <p>Use Sophia/Study.com only after written approval.</p>
           </article>
         </div>
 
         <div class="path-visual" aria-label="Recommended route visual">
           <div class="path-row">
-            <div class="path-step"><span>1</span><strong>Shortlist nearby programs</strong><small>Use the Tennessee Board list.</small></div>
-            <div class="path-step"><span>2</span><strong>Take required classes</strong><small>Only after advising confirms them.</small></div>
-            <div class="path-step"><span>3</span><strong>Apply to several starts</strong><small>Reduce waitlist risk.</small></div>
-            <div class="path-step"><span>4</span><strong>Finish RN program</strong><small>Labs and clinicals will be in person.</small></div>
-            <div class="path-step"><span>5</span><strong>Licensing exam, job</strong><small>Then compare RN-to-BSN options.</small></div>
+            <div class="path-step"><span>1</span><strong>Call Erlanger HR</strong><small>Get benefit rules in writing.</small></div>
+            <div class="path-step"><span>2</span><strong>Ask real start dates</strong><small>Private and public schools.</small></div>
+            <div class="path-step"><span>3</span><strong>Prep TEAS/HESI</strong><small>Start immediately.</small></div>
+            <div class="path-step"><span>4</span><strong>Protect sciences</strong><small>A&P and micro at approved colleges.</small></div>
+            <div class="path-step"><span>5</span><strong>Apply broadly</strong><small>Pick by true RN date and risk.</small></div>
           </div>
         </div>
       </div>
@@ -1050,18 +1147,18 @@
       <div class="wrap">
         <div class="section-head">
           <h2>This week's plan</h2>
-          <p>Do these in order. Do not pay fees or take classes until a nursing advisor confirms the answers in writing.</p>
+          <p>Do these before paying fees or taking classes.</p>
         </div>
 
         <div class="next-steps">
           <div class="panel">
             <h3>Next 7 days</h3>
             <div class="task-list">
-              <label class="task"><input type="checkbox" data-task="board-list"><span>Find 3 to 5 nearby Tennessee Board-approved AAS/ADN/ASN programs.</span></label>
-              <label class="task"><input type="checkbox" data-task="targets"><span>Email nursing admissions at each school. Use the questions below.</span></label>
-              <label class="task"><input type="checkbox" data-task="advising"><span>Ask for the exact required-class sheet before taking any class.</span></label>
-              <label class="task"><input type="checkbox" data-task="fafsa"><span>Confirm whether online classes and online science labs count.</span></label>
-              <label class="task"><input type="checkbox" data-task="teas"><span>Compare deadlines, costs, entrance-test rules, seats, and clinical locations.</span></label>
+              <label class="task"><input type="checkbox" data-task="erlanger-benefits"><span>Call Erlanger HR/benefits. Ask for tuition rules, caps, approved schools, and payback terms. Research note phone: 423-778-7969.</span></label>
+              <label class="task"><input type="checkbox" data-task="speed-schools"><span>Ask South, Casa Loma, Galen, ChattState, Dalton, GNTC, Chattanooga College, WGU, and TCAT for earliest start and graduation dates.</span></label>
+              <label class="task"><input type="checkbox" data-task="entrance-test"><span>Start TEAS/HESI prep now so testing does not slow the timeline.</span></label>
+              <label class="task"><input type="checkbox" data-task="science-classes"><span>Take A&P, Microbiology, and labs only through a college target schools accept in writing.</span></label>
+              <label class="task"><input type="checkbox" data-task="schedule-plan"><span>Plan around night shift sleep. Clinicals may be daytime and non-negotiable.</span></label>
             </div>
           </div>
 
@@ -1070,12 +1167,13 @@
             <p>Do not enroll unless the school confirms all of this in writing:</p>
             <div class="detail-body" style="padding:12px 0 0">
               <ul>
-                <li>The exact campus and track trains new RNs.</li>
-                <li>It is on the Tennessee Board nursing school list.</li>
-                <li>Graduation qualifies her to apply for Tennessee RN licensure by exam.</li>
-                <li>Total cost includes fees, books, uniforms, testing, health requirements, NCLEX, license, and travel.</li>
-                <li>Labs, practice sessions, and clinicals are clearly explained.</li>
-                <li>The school places students in clinicals.</li>
+                <li>She is not choosing an RN-to-BSN completion program as a starter path.</li>
+                <li>Current Board approval, accreditation, and NCLEX pass rate.</li>
+                <li>Earliest start date and expected RN graduation date from zero credits.</li>
+                <li>Total cost, including fees, supplies, travel, NCLEX, and license costs.</li>
+                <li>Whether Erlanger covers it, and whether there is a service/payback clause.</li>
+                <li>Clinical radius, clinical schedule, and whether sites can be near Chattanooga/Erlanger.</li>
+                <li>Rules about working nights before labs or clinicals.</li>
               </ul>
             </div>
           </div>
@@ -1087,28 +1185,28 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Path finder</h2>
-          <p>Pick the situation that matches her.</p>
+          <p>Pick the tradeoff that matters most.</p>
         </div>
 
         <div class="toolbox">
           <div class="panel">
             <h3>Pick a situation</h3>
-            <p>Use "No nursing license yet" for her current situation.</p>
+            <p>Default is her current situation: Erlanger PCT, no RN/LPN, wants higher pay fast.</p>
             <div class="scenario-grid" role="group" aria-label="Situation choices">
-              <button class="scenario-btn" type="button" data-scenario="none" aria-pressed="true">No nursing license yet</button>
-              <button class="scenario-btn" type="button" data-scenario="lpn" aria-pressed="false">Already an LPN</button>
-              <button class="scenario-btn" type="button" data-scenario="bachelors" aria-pressed="false">Already has a bachelor degree</button>
-              <button class="scenario-btn" type="button" data-scenario="cheap" aria-pressed="false">Cheapest is priority</button>
-              <button class="scenario-btn" type="button" data-scenario="fast" aria-pressed="false">Fastest is priority</button>
-              <button class="scenario-btn" type="button" data-scenario="bsn" aria-pressed="false">BSN is long-term goal</button>
+              <button class="scenario-btn" type="button" data-scenario="pct" aria-pressed="true">Current PCT</button>
+              <button class="scenario-btn" type="button" data-scenario="speed" aria-pressed="false">Fastest RN</button>
+              <button class="scenario-btn" type="button" data-scenario="local" aria-pressed="false">Local safer</button>
+              <button class="scenario-btn" type="button" data-scenario="pay" aria-pressed="false">Pay bump first</button>
+              <button class="scenario-btn" type="button" data-scenario="online" aria-pressed="false">Online matters</button>
+              <button class="scenario-btn" type="button" data-scenario="credits" aria-pressed="false">Online credits</button>
             </div>
             <div class="scenario-output" id="scenarioOutput" aria-live="polite">
-              <h3>Current situation: no nursing license yet</h3>
-              <p>Start with a Tennessee Board-approved RN-starting program. A nearby public community college AAS/ADN program is the default target.</p>
+              <h3>Current situation: Erlanger PCT</h3>
+              <p>Fastest likely RN is a vetted ADN/ASN that can start soon. Apply private for speed and public for safety.</p>
               <ul>
-                <li>Do not enroll in RN-to-BSN programs yet.</li>
-                <li>Take required classes only after the school confirms they count.</li>
-                <li>Expect in-person labs, practice sessions, and clinicals.</li>
+                <li>Call Erlanger first to see what it will pay.</li>
+                <li>Ask every school for earliest RN date from zero credits.</li>
+                <li>Do not let RN-to-BSN or online-credit shortcuts distract from NCLEX eligibility.</li>
               </ul>
             </div>
           </div>
@@ -1116,12 +1214,12 @@
           <aside class="panel">
             <h3>Rule of thumb</h3>
             <p>
-              The program must be approved to train new RNs in Tennessee.
-              A general degree or RN-to-BSN page is not enough.
+              Fastest ROI is usually ADN/ASN, NCLEX, RN job, then online BSN later.
+              A BSN first can be fine, but it should not delay RN pay.
             </p>
             <div class="link-row" style="margin-top:16px">
-              <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/Prof%20Master%20List.pdf" target="_blank" rel="noopener">Open TN Board list</a>
-              <a href="https://www.tn.gov/health/licensure/nurs.html" target="_blank" rel="noopener">TN licensure page</a>
+              <a href="https://www.erlanger.org/careers" target="_blank" rel="noopener">Erlanger careers</a>
+              <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/Prof%20Master%20List.pdf" target="_blank" rel="noopener">TN RN school list</a>
             </div>
           </aside>
         </div>
@@ -1142,125 +1240,123 @@
           </div>
           <div class="filter-row" role="group" aria-label="Option filters">
             <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
-            <button class="filter-btn" type="button" data-filter="recommended" aria-pressed="false">Recommended</button>
-            <button class="filter-btn" type="button" data-filter="cheap" aria-pressed="false">Cheapest</button>
-            <button class="filter-btn" type="button" data-filter="hybrid" aria-pressed="false">Online/hybrid</button>
-            <button class="filter-btn" type="button" data-filter="avoid" aria-pressed="false">Avoid now</button>
-            <button class="filter-btn" type="button" data-filter="later" aria-pressed="false">Later only</button>
+            <button class="filter-btn" type="button" data-filter="speed" aria-pressed="false">Speed first</button>
+            <button class="filter-btn" type="button" data-filter="local" aria-pressed="false">Local safer</button>
+            <button class="filter-btn" type="button" data-filter="pay" aria-pressed="false">Pay bump</button>
+            <button class="filter-btn" type="button" data-filter="online" aria-pressed="false">Online</button>
+            <button class="filter-btn" type="button" data-filter="avoid" aria-pressed="false">Avoid/later</button>
           </div>
         </div>
 
         <p class="empty-results hidden" id="emptyResults">No options match that search and filter. Try "All" or clear the search.</p>
 
         <div class="option-grid">
-          <article class="option-card" data-tags="recommended cheap adn aas community college legitimate nclex fastest practical public">
+          <article class="option-card" data-tags="recommended speed private south college casa loma galen asn adn 2028 expensive erlanger nclex">
             <div>
-              <span class="tag good">Best overall</span>
-              <h3>Public Tennessee community college ADN/AAS</h3>
-              <p>Best first choice from zero credits if the exact campus and track are Board-approved.</p>
+              <span class="tag warn">Fastest if it checks out</span>
+              <h3>Private ADN/ASN: South, Casa Loma, Galen</h3>
+              <p>Best speed-first bucket if she can start quickly and Erlanger covers enough.</p>
             </div>
             <div class="option-meta">
-              <div class="meta-item"><small>Cost</small><strong>Often lowest; Nashville State example about $10,000 before aid details.</strong></div>
-              <div class="meta-item"><small>Timeline</small><strong>Often 2.5 to 3.5 years from zero credits.</strong></div>
-              <div class="meta-item"><small>Online</small><strong>Prereqs may be online; nursing sequence is not fully online.</strong></div>
-              <div class="meta-item"><small>Main risk</small><strong>Hard to get in, entrance tests, limited spots, and in-person training times.</strong></div>
+              <div class="meta-item"><small>Cost</small><strong>High. Call Erlanger before paying anything.</strong></div>
+              <div class="meta-item"><small>Timeline</small><strong>South says 21 months; Galen is 2-year; Casa Loma Nashville lists 18 months.</strong></div>
+              <div class="meta-item"><small>Online</small><strong>Not fully online. Labs and clinicals still happen in person.</strong></div>
+              <div class="meta-item"><small>Main risk</small><strong>Casa Loma is newer/higher-risk; Galen/Casa may mean Nashville logistics.</strong></div>
             </div>
             <div class="link-row">
-              <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/Prof%20Master%20List.pdf" target="_blank" rel="noopener">TN Board list</a>
-              <a href="https://www.nscc.edu/academics/programs/nursing/index.php" target="_blank" rel="noopener">Nashville State</a>
-              <a href="https://www.chattanoogastate.edu/nursing-traditional" target="_blank" rel="noopener">Chattanooga State</a>
-              <a href="https://www.clevelandstatecc.edu/academic-programs/healthcare/nursing/" target="_blank" rel="noopener">Cleveland State</a>
+              <a href="https://www.south.edu/program/associate-of-science-in-nursing/" target="_blank" rel="noopener">South ASN</a>
+              <a href="https://galencollege.edu/campuses/nashville" target="_blank" rel="noopener">Galen Nashville</a>
+              <a href="https://casalomacollege.edu/program/associate-degree-nursing/" target="_blank" rel="noopener">Casa Loma AAS</a>
+              <a href="https://www.erlanger.org/careers" target="_blank" rel="noopener">Erlanger</a>
             </div>
           </article>
 
-          <article class="option-card" data-tags="bsn public legitimate board approved four year expensive university">
+          <article class="option-card" data-tags="recommended local safe cheap chattanooga state public aas rn 2029 teas board approved">
             <div>
-              <span class="tag info">Clean degree route</span>
-              <h3>Public in-state starter BSN</h3>
-              <p>Legitimate if Board-approved, but usually slower and more expensive than ADN/AAS first.</p>
+              <span class="tag good">Best local default</span>
+              <h3>Chattanooga State day AAS/RN</h3>
+              <p>Safer, local, and cheaper. Not the fastest if a private start is available sooner.</p>
             </div>
             <div class="option-meta">
-              <div class="meta-item"><small>Cost</small><strong>Usually much higher than community college.</strong></div>
-              <div class="meta-item"><small>Timeline</small><strong>Often 4 years from high school.</strong></div>
-              <div class="meta-item"><small>Online</small><strong>Some general education may be online; nursing is campus/clinical heavy.</strong></div>
-              <div class="meta-item"><small>Main risk</small><strong>Higher upfront cost and competitive admission.</strong></div>
+              <div class="meta-item"><small>Cost</small><strong>Likely lowest local RN route.</strong></div>
+              <div class="meta-item"><small>Timeline</small><strong>Apply by Mar. 1, 2027 -> Fall 2027 start -> Spring 2029 graduation -> likely mid-2029 RN.</strong></div>
+              <div class="meta-item"><small>Online</small><strong>Some classes may be online; RN sequence is in person.</strong></div>
+              <div class="meta-item"><small>Main risk</small><strong>Competitive admission and waiting for the next fall start.</strong></div>
             </div>
             <div class="link-row">
-              <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/Prof%20Master%20List.pdf" target="_blank" rel="noopener">TN Board list</a>
-              <a href="https://nursing.utk.edu/undergraduate-tuition-fees/" target="_blank" rel="noopener">UTK tuition example</a>
-              <a href="https://uthsc.edu/nursing/bsn.php" target="_blank" rel="noopener">UTHSC BSN</a>
+              <a href="https://www.chattanoogastate.edu/nursing-traditional" target="_blank" rel="noopener">ChattState RN</a>
+              <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/Prof%20Master%20List.pdf" target="_blank" rel="noopener">TN RN list</a>
             </div>
           </article>
 
-          <article class="option-card" data-tags="hybrid online wgu prelicensure bsn backup expensive clinicals">
+          <article class="option-card" data-tags="local backup public georgia dalton gntc asn nclex clinicals">
             <div>
-              <span class="tag warn">Investigate carefully</span>
+              <span class="tag info">Apply as backups</span>
+              <h3>Dalton State and GNTC ASN</h3>
+              <p>Near-Chattanooga public options. Useful if their start dates beat ChattState.</p>
+            </div>
+            <div class="option-meta">
+              <div class="meta-item"><small>Cost</small><strong>Public, but verify Tennessee-resident tuition.</strong></div>
+              <div class="meta-item"><small>Timeline</small><strong>GNTC says 4 consecutive semesters after entry; ask each school for true date.</strong></div>
+              <div class="meta-item"><small>Online</small><strong>Expect classroom, lab, and clinical time.</strong></div>
+              <div class="meta-item"><small>Main risk</small><strong>Georgia approval/licensure steps, clinical sites, and Erlanger coverage.</strong></div>
+            </div>
+            <div class="link-row">
+              <a href="https://www.daltonstate.edu/program/nursing-asn-registered-nursing/" target="_blank" rel="noopener">Dalton ASN</a>
+              <a href="https://www.gntc.edu/nursing/" target="_blank" rel="noopener">GNTC ASN</a>
+            </div>
+          </article>
+
+          <article class="option-card" data-tags="pay lpn practical nursing tcat bridge pn income local chattanooga">
+            <div>
+              <span class="tag warn">Pay bump, not fastest RN</span>
+              <h3>TCAT Chattanooga LPN first</h3>
+              <p>Good if she needs higher pay soon. It may not beat direct ADN/ASN for final RN date.</p>
+            </div>
+            <div class="option-meta">
+              <div class="meta-item"><small>Cost</small><strong>ChattState lists cost around $7,105.</strong></div>
+              <div class="meta-item"><small>Timeline</small><strong>1-year diploma, then LPN-to-RN bridge.</strong></div>
+              <div class="meta-item"><small>Online</small><strong>Full-time day classes, labs, and clinicals.</strong></div>
+              <div class="meta-item"><small>Main risk</small><strong>Working nights plus weekday school may be hard.</strong></div>
+            </div>
+            <div class="link-row">
+              <a href="https://www.chattanoogastate.edu/practical-nursing" target="_blank" rel="noopener">TCAT Chatt LPN</a>
+              <a href="https://www.chattanoogastate.edu/nursing-transition" target="_blank" rel="noopener">ChattState LPN-to-RN</a>
+            </div>
+          </article>
+
+          <article class="option-card" data-tags="online hybrid wgu prelicensure bsn backup expensive clinicals">
+            <div>
+              <span class="tag future">Online-heavy, slower</span>
               <h3>WGU Tennessee prelicensure BSN</h3>
-              <p>Worth checking for online coursework, but still has in-person labs/clinicals and higher cost.</p>
+              <p>Good if online/BSN matters more than fastest RN. Still has in-person labs and clinicals.</p>
             </div>
             <div class="option-meta">
-              <div class="meta-item"><small>Cost</small><strong>WGU lists $8,755 per 6-month term; standard 8-term path is about $71,640 before extras.</strong></div>
-              <div class="meta-item"><small>Timeline</small><strong>WGU states standard path is 4 years.</strong></div>
-              <div class="meta-item"><small>Online</small><strong>Coursework online; labs/clinical rotations in person.</strong></div>
-              <div class="meta-item"><small>Main risk</small><strong>Travel, clinical timing, total cost, and verifying current Board status.</strong></div>
+              <div class="meta-item"><small>Cost</small><strong>WGU lists $8,755 per 6-month term.</strong></div>
+              <div class="meta-item"><small>Timeline</small><strong>Standard prelicensure path is 8 terms, about 4 years.</strong></div>
+              <div class="meta-item"><small>Online</small><strong>Coursework online; labs and clinical rotations in person.</strong></div>
+              <div class="meta-item"><small>Main risk</small><strong>Not likely fastest. Verify Chattanooga clinical placement.</strong></div>
             </div>
             <div class="link-row">
               <a href="https://www.wgu.edu/online-nursing-health-degrees/rn-prelicensure-nursing-bachelors-program.html" target="_blank" rel="noopener">WGU program</a>
-              <a href="https://www.wgu.edu/admissions/clinicals.html" target="_blank" rel="noopener">WGU clinicals</a>
             </div>
           </article>
 
-          <article class="option-card" data-tags="lpn practical nursing tcat bridge pn income bridge">
+          <article class="option-card" data-tags="avoid later charter oak rn to bsn nonstarter tennessee enrollment non rn">
             <div>
-              <span class="tag warn">Only if income first</span>
-              <h3>LPN first, then LPN-to-RN bridge</h3>
-              <p>Useful only if she needs practical-nursing income before becoming an RN.</p>
+              <span class="tag bad">Avoid until RN</span>
+              <h3>Charter Oak or any RN-to-BSN</h3>
+              <p>Not a starter RN path. Reconsider only after she is already RN-eligible/licensed.</p>
             </div>
             <div class="option-meta">
-              <div class="meta-item"><small>Cost</small><strong>TCAT Nashville practical nursing example lists about $4,461 tuition/fees plus supplies.</strong></div>
-              <div class="meta-item"><small>Timeline</small><strong>Often 12 months to LPN, then more time for RN bridge.</strong></div>
-              <div class="meta-item"><small>Online</small><strong>Some hybrid options; clinicals are in person.</strong></div>
-              <div class="meta-item"><small>Main risk</small><strong>May delay RN if the real goal is RN as soon as possible.</strong></div>
+              <div class="meta-item"><small>Cost</small><strong>Irrelevant until RN comes first.</strong></div>
+              <div class="meta-item"><small>Timeline</small><strong>Later BSN step after NCLEX/RN job.</strong></div>
+              <div class="meta-item"><small>Online</small><strong>Often online after RN license exists.</strong></div>
+              <div class="meta-item"><small>Main risk</small><strong>Does not qualify a non-RN for NCLEX-RN.</strong></div>
             </div>
             <div class="link-row">
-              <a href="https://tcatnashville.edu/programs/practical-nursing" target="_blank" rel="noopener">TCAT example</a>
-              <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/Prof%20Master%20List.pdf" target="_blank" rel="noopener">RN bridge list</a>
-            </div>
-          </article>
-
-          <article class="option-card" data-tags="avoid charter oak rn to bsn nonstarter tennessee enrollment non rn">
-            <div>
-              <span class="tag bad">Avoid now</span>
-              <h3>Charter Oak RN/ADN-to-BSN</h3>
-              <p>Not a starter RN path. It is for people who already completed an RN program and have, or soon prove, RN licensure.</p>
-            </div>
-            <div class="option-meta">
-              <div class="meta-item"><small>Cost</small><strong>Major-only estimate about $9,389 before semester fees and remaining credits.</strong></div>
-              <div class="meta-item"><small>Timeline</small><strong>Not applicable until she is already RN-eligible/licensed.</strong></div>
-              <div class="meta-item"><small>Online</small><strong>Coursework online, but practicum requirements exist.</strong></div>
-              <div class="meta-item"><small>Main risk</small><strong>Does not qualify her for the RN licensing exam; Tennessee enrollment may also be blocked.</strong></div>
-            </div>
-            <div class="link-row">
-              <a href="https://www.charteroak.edu/rn-adn-to-bsn/" target="_blank" rel="noopener">Charter Oak page</a>
+              <a href="https://www.charteroak.edu/rn-adn-to-bsn/" target="_blank" rel="noopener">Charter Oak</a>
               <a href="https://www.charteroak.edu/catalog/current/ug_admissions/nursing_adm_requirements.php" target="_blank" rel="noopener">Admission rules</a>
-              <a href="https://www.charteroak.edu/catalog/current/undergraduate-programs-bachelors/nursing.php" target="_blank" rel="noopener">Catalog warning</a>
-            </div>
-          </article>
-
-          <article class="option-card" data-tags="later rn to bsn online after license employer assistance bsn">
-            <div>
-              <span class="tag future">Later only</span>
-              <h3>Online RN-to-BSN after RN license</h3>
-              <p>Good after RN licensure, especially if an employer helps pay tuition.</p>
-            </div>
-            <div class="option-meta">
-              <div class="meta-item"><small>Cost</small><strong>Varies; employer reimbursement can matter a lot.</strong></div>
-              <div class="meta-item"><small>Timeline</small><strong>Some programs can be done in about a year full-time.</strong></div>
-              <div class="meta-item"><small>Online</small><strong>Often online because the RN license already exists.</strong></div>
-              <div class="meta-item"><small>Main risk</small><strong>Do not confuse this with initial RN licensure.</strong></div>
-            </div>
-            <div class="link-row">
-              <a href="https://nursing.utk.edu/undergraduate-programs/registered-nurse-to-bsn-rn-to-bsn/" target="_blank" rel="noopener">UTK RN-to-BSN</a>
             </div>
           </article>
         </div>
@@ -1270,8 +1366,8 @@
     <section id="questions">
       <div class="wrap">
         <div class="section-head">
-          <h2>Email these questions to each school</h2>
-          <p>Send this before paying an application fee or taking classes. Ask them to reply in writing.</p>
+          <h2>Call or email these first</h2>
+          <p>Use this before paying an application fee or starting classes. Ask for written answers.</p>
         </div>
 
         <div class="question-toolbar">
@@ -1281,23 +1377,24 @@
 
         <div class="question-list">
           <article class="question-box">
-            <h3>Essential questions</h3>
+            <h3>Critical questions</h3>
             <ol>
-              <li>Is this exact campus and track a program for training new RNs, not RN-to-BSN only?</li>
-              <li>What exact degree is awarded: AAS, ASN, ADN, BSN, or something else?</li>
-              <li>Is this exact campus and track on the Tennessee Board nursing school list, and what is its current approval status?</li>
-              <li>Does graduation qualify me to apply for Tennessee RN licensure by exam and take the NCLEX-RN?</li>
-              <li>Is the program accredited by a recognized nursing accreditor, such as ACEN, CCNE, or CNEA?</li>
-              <li>What was the most recent first-time NCLEX-RN pass rate?</li>
-              <li>What required classes must I finish before applying, and what minimum grades are needed?</li>
-              <li>Are online required classes, online science labs, or TN eCampus classes accepted?</li>
-              <li>Is TEAS or HESI required? What score is required, and what score was competitive last cycle?</li>
-              <li>What are the next deadlines, start dates, number of seats, and admission method?</li>
-              <li>What is the total estimated cost, including fees and required extras?</li>
-              <li>Where are labs, practice sessions, and clinicals? Are clinicals days, evenings, weekends, or variable?</li>
-              <li>Can you send all answers above in writing before enrollment?</li>
+              <li>Erlanger HR: is tuition help reimbursement, direct bill, scholarship, or loan-style assistance?</li>
+              <li>Erlanger HR: is she eligible as a night-shift PCT, and what is the cap, approved-school list, grade rule, and payback clause?</li>
+              <li>Erlanger HR: does it cover books, lab fees, uniforms, testing, NCLEX, license fees, and supplies?</li>
+              <li>School: what is the earliest start date and expected RN graduation date from zero credits?</li>
+              <li>School: can she apply before all required classes are complete?</li>
+              <li>School: is TEAS or HESI required, and what score was competitive last cycle?</li>
+              <li>School: which Sophia/Study.com/CLEP credits are accepted, if any?</li>
+              <li>School: must A&P, Microbiology, and science labs be taken through an accredited college?</li>
+              <li>School: what is the current approval/accreditation status and latest NCLEX pass rate?</li>
+              <li>School: what is total cost, including fees, books, supplies, testing, NCLEX, license, and travel?</li>
+              <li>School: where are clinicals, and can they be near Chattanooga or Erlanger?</li>
+              <li>School: are clinicals days, evenings, weekends, or variable?</li>
+              <li>Both: can she safely keep 3 night shifts, or are there rest/work restrictions before clinical?</li>
+              <li>Can you send these answers in writing before enrollment?</li>
             </ol>
-            <p>Only ask RN-to-BSN questions if the program is Charter Oak or another completion program.</p>
+            <p>Do not trust a verbal answer for credits, cost, clinicals, or approval status.</p>
           </article>
         </div>
       </div>
@@ -1312,62 +1409,66 @@
 
         <div class="sources">
           <div class="source-row">
-            <div><strong>Tennessee Board of Nursing - licensure</strong><span>Explains Tennessee nursing licensure and NCLEX eligibility basics.</span></div>
+            <div><strong>Erlanger HR and careers</strong><span>Use HR plus the careers subsite to verify tuition help and internal options.</span></div>
+            <a href="https://www.erlangercareers.org/available.html" target="_blank" rel="noopener">Erlanger jobs / HR</a>
+          </div>
+          <div class="source-row">
+            <div><strong>Tennessee Board RN school list</strong><span>Check exact approved Tennessee RN programs and tracks.</span></div>
+            <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/Prof%20Master%20List.pdf" target="_blank" rel="noopener">TN RN list</a>
+          </div>
+          <div class="source-row">
+            <div><strong>Tennessee Board licensing page</strong><span>Licensure and NCLEX-related state information.</span></div>
             <a href="https://www.tn.gov/health/licensure/nurs.html" target="_blank" rel="noopener">Licensure</a>
           </div>
           <div class="source-row">
-            <div><strong>Tennessee Board Professional Nursing School List</strong><span>The key list to check exact Board-approved programs and tracks.</span></div>
-            <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/Prof%20Master%20List.pdf" target="_blank" rel="noopener">Board list</a>
+            <div><strong>Chattanooga State AAS Nursing</strong><span>Local public RN route; day track and application timing.</span></div>
+            <a href="https://www.chattanoogastate.edu/nursing-traditional" target="_blank" rel="noopener">Chatt RN</a>
           </div>
           <div class="source-row">
-            <div><strong>NCSBN - approval of nursing education programs</strong><span>Explains why Board-approved education matters for NCLEX eligibility.</span></div>
-            <a href="https://www.ncsbn.org/nursing-regulation/education/approval-of-nursing-education-programs.page" target="_blank" rel="noopener">Approval</a>
+            <div><strong>South College ASN</strong><span>Private speed-first candidate; verify campus, cost, and clinicals.</span></div>
+            <a href="https://www.south.edu/program/associate-of-science-in-nursing/" target="_blank" rel="noopener">South ASN</a>
           </div>
           <div class="source-row">
-            <div><strong>NCSBN - clinical instruction</strong><span>Explains why new-RN programs require real supervised clinical experience.</span></div>
-            <a href="https://www.ncsbn.org/papers/clinical-instruction-in-prelicensure-nursing-programs" target="_blank" rel="noopener">Clinicals</a>
+            <div><strong>Galen Nashville</strong><span>Private associate nursing candidate; verify Nashville-specific tuition and logistics.</span></div>
+            <a href="https://galencollege.edu/campuses/nashville" target="_blank" rel="noopener">Galen</a>
           </div>
           <div class="source-row">
-            <div><strong>Nashville State AAS Nursing</strong><span>Concrete low-cost Tennessee community college example.</span></div>
-            <a href="https://www.nscc.edu/academics/programs/nursing/index.php" target="_blank" rel="noopener">Nashville</a>
+            <div><strong>Casa Loma AAS Nursing</strong><span>Private Nashville AAS candidate; verify newer-program risks.</span></div>
+            <a href="https://casalomacollege.edu/program/associate-degree-nursing/" target="_blank" rel="noopener">Casa Loma</a>
           </div>
           <div class="source-row">
-            <div><strong>Chattanooga State Nursing</strong><span>Concrete AAS example with day/evening pathway details.</span></div>
-            <a href="https://www.chattanoogastate.edu/nursing-traditional" target="_blank" rel="noopener">Chattanooga</a>
+            <div><strong>Dalton State ASN</strong><span>Nearby Georgia public RN backup.</span></div>
+            <a href="https://www.daltonstate.edu/program/nursing-asn-registered-nursing/" target="_blank" rel="noopener">Dalton</a>
           </div>
           <div class="source-row">
-            <div><strong>Cleveland State AAS Nursing</strong><span>Concrete Tennessee associate-degree nursing example.</span></div>
-            <a href="https://www.clevelandstatecc.edu/academic-programs/healthcare/nursing/" target="_blank" rel="noopener">Cleveland</a>
+            <div><strong>GNTC ASN</strong><span>Nearby Georgia public RN backup; four-semester curriculum after entry.</span></div>
+            <a href="https://www.gntc.edu/nursing/" target="_blank" rel="noopener">GNTC</a>
           </div>
           <div class="source-row">
-            <div><strong>Tennessee Reconnect</strong><span>Adult last-dollar grant information.</span></div>
-            <a href="https://tnreconnect.gov/Tennessee-Reconnect-Grant" target="_blank" rel="noopener">Reconnect</a>
+            <div><strong>TCAT Chattanooga Practical Nursing</strong><span>LPN-first pay-bump option, not necessarily fastest RN.</span></div>
+            <a href="https://www.chattanoogastate.edu/practical-nursing" target="_blank" rel="noopener">TCAT LPN</a>
           </div>
           <div class="source-row">
-            <div><strong>Tennessee Promise</strong><span>Recent high-school graduate scholarship and mentoring information.</span></div>
-            <a href="https://www.tbr.edu/initiatives/tn-promise" target="_blank" rel="noopener">Promise</a>
+            <div><strong>Tennessee Board PN school list</strong><span>Check current practical-nursing approval before choosing LPN first.</span></div>
+            <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/PN%20Master%20List.pdf" target="_blank" rel="noopener">TN PN list</a>
           </div>
           <div class="source-row">
-            <div><strong>WGU starter BSN</strong><span>Hybrid/online RN-starting option to verify carefully.</span></div>
+            <div><strong>WGU starter BSN</strong><span>Online-heavy prelicensure BSN with in-person labs/clinicals.</span></div>
             <a href="https://www.wgu.edu/online-nursing-health-degrees/rn-prelicensure-nursing-bachelors-program.html" target="_blank" rel="noopener">WGU</a>
           </div>
           <div class="source-row">
-            <div><strong>Charter Oak RN/ADN-to-BSN</strong><span>The program page that should be avoided as an initial RN path.</span></div>
+            <div><strong>Charter Oak RN/ADN-to-BSN</strong><span>Later-only completion page, not a starter RN route.</span></div>
             <a href="https://www.charteroak.edu/rn-adn-to-bsn/" target="_blank" rel="noopener">Charter Oak</a>
           </div>
           <div class="source-row">
-            <div><strong>Charter Oak nursing admission requirements</strong><span>Shows RN/program completion requirements for enrollment/continued enrollment.</span></div>
-            <a href="https://www.charteroak.edu/catalog/current/ug_admissions/nursing_adm_requirements.php" target="_blank" rel="noopener">Admissions</a>
-          </div>
-          <div class="source-row">
-            <div><strong>Charter Oak nursing catalog</strong><span>Includes practicum details and the Tennessee enrollment limitation noted in the research.</span></div>
+            <div><strong>Charter Oak nursing catalog</strong><span>Use this to recheck enrollment and completion limits before considering it later.</span></div>
             <a href="https://www.charteroak.edu/catalog/current/undergraduate-programs-bachelors/nursing.php" target="_blank" rel="noopener">Catalog</a>
           </div>
         </div>
 
         <footer class="footer">
           <strong>Important:</strong> This page summarizes research; it is not a school admission decision or legal/regulatory advice.
-          Before enrollment, confirm the current status in writing with the Tennessee Board of Nursing and the exact school, campus, and program track.
+          Before enrollment, confirm the current status in writing with Erlanger HR, the Board, and the exact school, campus, and program track.
         </footer>
       </div>
     </section>
@@ -1377,81 +1478,81 @@
 
   <script>
     const scenarios = {
-      none: {
-        title: "Current situation: no nursing license yet",
-        body: "Start with a Tennessee Board-approved RN-starting program. A nearby public community college AAS/ADN program is the default target.",
+      pct: {
+        title: "Current situation: Erlanger PCT",
+        body: "Fastest likely RN is a vetted ADN/ASN that can start soon. Apply private for speed and public for safety.",
         bullets: [
-          "Do not enroll in RN-to-BSN programs yet.",
-          "Take required classes only after the school confirms they count.",
-          "Expect in-person labs, practice sessions, and clinicals."
+          "Call Erlanger first to see what it will pay.",
+          "Ask every school for earliest RN date from zero credits.",
+          "Do not let RN-to-BSN or online-credit shortcuts distract from NCLEX eligibility."
         ]
       },
-      lpn: {
-        title: "If she is already an LPN",
-        body: "Use a Board-approved LPN-to-RN bridge if the RN goal is still the priority.",
+      speed: {
+        title: "If fastest RN is the priority",
+        body: "Start with South College, Casa Loma, and Galen, but only if written answers make the risk acceptable.",
         bullets: [
-          "Confirm active LPN license requirements.",
-          "Ask whether the bridge actually saves time.",
-          "Check required classes, work-hour rules, and clinical placement."
+          "Verify start date, graduation date, Board approval, and NCLEX pass rate.",
+          "Ask whether clinicals can be near Chattanooga or Erlanger.",
+          "Use Erlanger tuition help only after confirming cap and payback rules."
         ]
       },
-      bachelors: {
-        title: "If she already has a bachelor degree",
-        body: "Look at accelerated BSN or second-degree BSN programs, if required classes and cost work.",
+      local: {
+        title: "If local and safer matters",
+        body: "Use Chattanooga State day track as the anchor and also check Dalton State and GNTC.",
         bullets: [
-          "This does not apply to the current high-school-only profile.",
-          "Verify Board approval for the exact accelerated track.",
-          "Expect an intense in-person clinical schedule."
+          "ChattState day track starts every fall and has a March 1 deadline.",
+          "Dalton and GNTC may help if their start windows are better.",
+          "Apply broadly so one waitlist does not control the timeline."
         ]
       },
-      cheap: {
-        title: "If cheapest is the top priority",
-        body: "Choose a public Tennessee community college ADN/AAS path and maximize aid.",
+      pay: {
+        title: "If she needs higher pay first",
+        body: "TCAT Chattanooga LPN can be a faster pay bump, but it may delay the final RN date.",
         bullets: [
-          "File FAFSA.",
-          "Check Tennessee Promise or Tennessee Reconnect.",
-          "Budget for nursing extras that aid may not cover."
+          "Compare LPN pay plus night differential against staying PCT while in RN school.",
+          "Ask how LPN-to-RN bridge timing actually works.",
+          "Use this path only if near-term income matters more than fastest RN."
         ]
       },
-      fast: {
-        title: "If fastest realistic path is the priority",
-        body: "Apply to multiple Board-approved ADN/AAS programs with the earliest realistic start date.",
+      online: {
+        title: "If online matters most",
+        body: "WGU is the main online-heavy starter-RN option to check, but it is not fully online or likely fastest.",
         bullets: [
-          "Required-class timing and application windows control speed.",
-          "Use WGU/private hybrid only after strict cost and approval verification.",
-          "Do not trade legitimacy for speed."
+          "Coursework is online, but labs and clinical rotations are in person.",
+          "Ask where Chattanooga-area clinicals would happen.",
+          "Compare WGU's 4-year structure against ADN/ASN speed."
         ]
       },
-      bsn: {
-        title: "If BSN is the long-term goal",
-        body: "The efficient path is usually ADN/AAS, RN license, RN job, then online RN-to-BSN.",
+      credits: {
+        title: "If she wants to use Sophia or Study.com",
+        body: "Use alternative credits only for confirmed low-risk gen eds.",
         bullets: [
-          "Direct BSN is cleaner but usually costs more up front.",
-          "Employer tuition assistance may help with RN-to-BSN later.",
-          "Do not confuse RN-to-BSN with initial RN licensure."
+          "Do not use them for A&P, Microbiology, or labs unless the target school approves in writing.",
+          "Pass/fail credit may not help admission GPA.",
+          "TEAS/HESI and seat availability still control speed."
         ]
       }
     };
 
     const summaryText =
-`Tennessee RN path summary:
+`Erlanger PCT RN path summary:
 
-Charter Oak is not the right starting path. It is an RN-to-BSN completion program, not a starter RN program. A Tennessee resident with zero college credits should start with a Tennessee Board-approved RN-starting program.
+The fastest legitimate RN route is a Board-approved ADN/ASN that can start soon, not Charter Oak or another RN-to-BSN completion program.
 
-Best first target: nearby public Tennessee community college AAS/ADN nursing programs. Confirm the required classes, apply to several schools, complete labs and clinicals, then apply for Tennessee RN licensure by exam and take NCLEX-RN.
+Speed-first: compare South College ASN, Casa Loma AAS, and Galen Nashville. These may point to a possible 2028 RN date if she starts quickly, but only after verifying cost, clinical locations, Board approval, NCLEX outcomes, and Erlanger tuition coverage.
 
-Cheapest likely path: public community college ADN/AAS plus FAFSA, Tennessee Promise/ReConnect, and Pell if eligible.
+Safer local route: Chattanooga State day AAS/RN, while also checking Dalton State and GNTC. If she starts required classes now, applies by March 1, 2027, and is accepted for Fall 2027, a mid-2029 RN license is realistic after graduation and NCLEX.
 
-Online reality check: some required classes may be online, but real RN programs require in-person labs, practice sessions, and supervised patient-care training.
+Pay-bump route: TCAT Chattanooga LPN first can raise income sooner, but it may not be the fastest final RN route.
 
-After becoming an RN, compare online RN-to-BSN programs. Charter Oak might only be reconsidered later if Tennessee enrollment authorization and accreditation are current.`;
+Online-credit rule: Sophia, Study.com, and CLEP are only for confirmed gen eds. Take A&P, Microbiology, and labs through a target-approved college unless the school says otherwise in writing.`;
 
     const questionsText = Array.from(document.querySelectorAll(".question-box li"))
       .map((li, index) => `${index + 1}. ${li.textContent.trim()}`)
       .join("\n");
 
     function renderScenario(key) {
-      const scenario = scenarios[key] || scenarios.none;
+      const scenario = scenarios[key] || scenarios.pct;
       const output = document.getElementById("scenarioOutput");
       output.innerHTML = `
         <h3>${scenario.title}</h3>
@@ -1498,7 +1599,7 @@ After becoming an RN, compare online RN-to-BSN programs. Charter Oak might only 
       });
     });
 
-    renderScenario("none");
+    renderScenario("pct");
 
     let activeFilter = "all";
     const optionCards = Array.from(document.querySelectorAll(".option-card"));

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tennessee RN Path Guide</title>
   <meta name="description" content="Plain-English Tennessee RN pathway guide comparing Charter Oak with legitimate RN routes.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%230e3b43'/%3E%3Cpath d='M18 32h28M32 18v28' stroke='%23f8fafc' stroke-width='8' stroke-linecap='round'/%3E%3C/svg%3E">
   <style>
     :root {
       --bg: #f7f8fb;
@@ -16,7 +17,7 @@
       --teal-soft: #e6f4f1;
       --coral: #b84a3f;
       --coral-soft: #fff0ed;
-      --gold: #a66a00;
+      --gold: #7a4a00;
       --gold-soft: #fff5da;
       --blue: #2f5f9d;
       --blue-soft: #eef5ff;
@@ -145,6 +146,14 @@
       transition: transform .16s ease, border-color .16s ease, background .16s ease, color .16s ease;
     }
 
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid rgba(47, 95, 157, .45);
+      outline-offset: 3px;
+    }
+
     .ghost-btn {
       background: #fff;
       border-color: var(--line);
@@ -180,7 +189,7 @@
     }
 
     .hero {
-      padding: 58px 0 30px;
+      padding: 42px 0 24px;
     }
 
     .hero-grid {
@@ -193,7 +202,7 @@
     .hero h1 {
       margin: 0;
       max-width: 780px;
-      font-size: clamp(2.1rem, 4.8vw, 4.8rem);
+      font-size: clamp(2.05rem, 4.2vw, 3.65rem);
       line-height: .98;
       letter-spacing: 0;
     }
@@ -232,7 +241,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 360px;
+      min-height: 0;
     }
 
     .verdict-top {
@@ -760,6 +769,15 @@
 
     .hidden { display: none !important; }
 
+    .empty-results {
+      margin: 14px 0 0;
+      padding: 14px 16px;
+      border: 1px dashed var(--line);
+      border-radius: var(--radius);
+      color: var(--muted);
+      background: #fff;
+    }
+
     @media (max-width: 920px) {
       .topbar-inner {
         align-items: flex-start;
@@ -783,8 +801,12 @@
     }
 
     @media (max-width: 680px) {
+      .topbar {
+        position: static;
+      }
+
       section {
-        scroll-margin-top: 170px;
+        scroll-margin-top: 18px;
       }
 
       .wrap,
@@ -794,11 +816,26 @@
       }
 
       .hero {
-        padding-top: 34px;
+        padding-top: 28px;
       }
 
       .hero h1 {
-        font-size: 2.45rem;
+        font-size: 2.2rem;
+      }
+
+      nav {
+        width: 100%;
+        overflow-x: visible;
+        flex-wrap: wrap;
+        gap: 4px;
+        padding-bottom: 2px;
+      }
+
+      .hero-actions .ghost-btn,
+      .scenario-btn,
+      .filter-btn {
+        white-space: normal;
+        text-align: center;
       }
 
       .section-head {
@@ -821,8 +858,15 @@
       }
 
       nav a {
-        min-height: 34px;
-        padding: 7px 9px;
+        min-height: 44px;
+        padding: 6px 7px;
+        font-size: .88rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .hero h1 {
+        font-size: 2.05rem;
       }
     }
 
@@ -831,6 +875,7 @@
       .hero-actions,
       .search-panel,
       .question-toolbar,
+      .empty-results,
       .toast {
         display: none !important;
       }
@@ -855,6 +900,29 @@
 
       a {
         color: #000;
+      }
+
+      .option-card.hidden {
+        display: flex !important;
+      }
+
+      .sources a[href^="http"]::after {
+        content: " (" attr(href) ")";
+        font-weight: 400;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
       }
     }
   </style>
@@ -886,16 +954,15 @@
     <section class="hero" id="top">
       <div class="wrap hero-grid">
         <div>
-          <h1>Tennessee RN path: skip Charter Oak for now.</h1>
+          <h1>Best path to become an RN in Tennessee</h1>
           <p>
-            This guide turns the research note into a simple action plan for a Tennessee resident with
-            high school education, zero college credits, no healthcare credentials, and a goal of becoming
-            an RN in Tennessee as cheaply and legitimately as possible.
+            For a Tennessee resident starting from zero college credits: skip Charter Oak
+            and start with a Tennessee Board-approved public ADN/AAS RN program.
           </p>
           <div class="hero-actions">
-            <a class="primary-btn" href="#next">Start with the action plan</a>
-            <button class="ghost-btn" type="button" id="copySummaryBtn">Copy plain-English summary</button>
-            <button class="ghost-btn" type="button" id="printBtn">Print or save PDF</button>
+            <a class="primary-btn" href="#next">Action plan</a>
+            <button class="ghost-btn" type="button" id="copySummaryBtn">Copy summary</button>
+            <button class="ghost-btn" type="button" id="printBtn">Save PDF</button>
           </div>
         </div>
 
@@ -906,7 +973,7 @@
                 <div class="status-icon" aria-hidden="true">X</div>
                 <div>
                   <h2>Do not start with Charter Oak.</h2>
-                  <p>Charter Oak is an RN-to-BSN completion program. It is not an entry route for someone who is not already an RN.</p>
+                  <p>It is an RN-to-BSN completion program, not a starter RN program.</p>
                 </div>
               </div>
             </div>
@@ -916,23 +983,23 @@
                 <span class="icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4 4L19 6.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>
-                <div><strong>Best first target</strong><p>Nearby Tennessee Board-approved public community college AAS/ADN nursing programs.</p></div>
+                <div><strong>Best first target</strong><p>Nearby public community college RN programs approved by the Tennessee Board.</p></div>
               </div>
               <div class="stat">
                 <span class="icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M6 7h9.5a3.5 3.5 0 010 7H8" stroke="currentColor" stroke-width="2.1" stroke-linecap="round"/></svg>
                 </span>
-                <div><strong>Cheapest likely route</strong><p>Community college ADN/AAS plus FAFSA, Tennessee Promise/ReConnect, and Pell if eligible.</p></div>
+                <div><strong>Cheapest likely route</strong><p>Community college ADN/AAS plus FAFSA and Tennessee/Pell aid if eligible.</p></div>
               </div>
               <div class="stat">
                 <span class="icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none"><path d="M7 20V8l5-5 5 5v12M4 20h16" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </span>
-                <div><strong>Online reality check</strong><p>Prereqs may be online. Real RN programs still require labs, simulation, and clinicals in person.</p></div>
+                <div><strong>Online reality check</strong><p>Some classes may be online. RN labs and clinicals are in person.</p></div>
               </div>
             </div>
           </div>
-          <p class="date">Based on research dated June 3, 2026. Always recheck Board approval, costs, admissions windows, and accreditation before enrolling.</p>
+          <p class="date">Research dated June 3, 2026. Recheck approval, costs, deadlines, and accreditation before enrolling.</p>
         </aside>
       </div>
     </section>
@@ -940,40 +1007,77 @@
     <section>
       <div class="wrap">
         <div class="section-head">
-          <h2>The short version</h2>
-          <p>There are only a few decisions that matter at the start. Everything else should be checked against those decisions.</p>
+          <h2>Start here</h2>
+          <p>The first decision is simple: choose a real RN-starting program, not an RN-to-BSN completion program.</p>
         </div>
 
         <div class="quick-grid">
           <article class="mini-card">
             <span class="tag bad">Avoid now</span>
-            <h3>Charter Oak RN/ADN-to-BSN</h3>
-            <p>Not a pre-licensure RN program. It does not create NCLEX-RN eligibility for a non-RN.</p>
+            <h3>Charter Oak is for current RNs</h3>
+            <p>It does not train a beginner or qualify her for the RN licensing exam.</p>
           </article>
           <article class="mini-card">
             <span class="tag good">Best fit</span>
             <h3>Public ADN/AAS first</h3>
-            <p>Usually the lowest-cost legitimate first RN path from zero credits, if the exact program is Board-approved.</p>
+            <p>Usually the lowest-cost real RN path from zero credits.</p>
           </article>
           <article class="mini-card">
             <span class="tag info">Possible backup</span>
             <h3>WGU Tennessee prelicensure BSN</h3>
-            <p>Worth checking if online coursework matters, but it still has in-person labs/clinicals and is likely much more expensive.</p>
+            <p>Worth checking, but still has in-person labs/clinicals and costs more.</p>
           </article>
           <article class="mini-card">
             <span class="tag future">Later step</span>
             <h3>RN-to-BSN after licensure</h3>
-            <p>After becoming an RN, compare online RN-to-BSN programs and employer tuition help.</p>
+            <p>After RN licensure, compare online BSN options and employer tuition help.</p>
           </article>
         </div>
 
         <div class="path-visual" aria-label="Recommended route visual">
           <div class="path-row">
-            <div class="path-step"><span>1</span><strong>Shortlist nearby programs</strong><small>Use the Tennessee Board nursing school list.</small></div>
-            <div class="path-step"><span>2</span><strong>Take exact prerequisites</strong><small>Only after nursing advising confirms them.</small></div>
-            <div class="path-step"><span>3</span><strong>Apply to multiple cohorts</strong><small>Reduce waitlist and denial risk.</small></div>
+            <div class="path-step"><span>1</span><strong>Shortlist nearby programs</strong><small>Use the Tennessee Board list.</small></div>
+            <div class="path-step"><span>2</span><strong>Take required classes</strong><small>Only after advising confirms them.</small></div>
+            <div class="path-step"><span>3</span><strong>Apply to several starts</strong><small>Reduce waitlist risk.</small></div>
             <div class="path-step"><span>4</span><strong>Finish RN program</strong><small>Labs and clinicals will be in person.</small></div>
-            <div class="path-step"><span>5</span><strong>NCLEX-RN, license, job</strong><small>Then compare RN-to-BSN options.</small></div>
+            <div class="path-step"><span>5</span><strong>Licensing exam, job</strong><small>Then compare RN-to-BSN options.</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="next">
+      <div class="wrap">
+        <div class="section-head">
+          <h2>This week's plan</h2>
+          <p>Do these in order. Do not pay fees or take classes until a nursing advisor confirms the answers in writing.</p>
+        </div>
+
+        <div class="next-steps">
+          <div class="panel">
+            <h3>Next 7 days</h3>
+            <div class="task-list">
+              <label class="task"><input type="checkbox" data-task="board-list"><span>Find 3 to 5 nearby Tennessee Board-approved AAS/ADN/ASN programs.</span></label>
+              <label class="task"><input type="checkbox" data-task="targets"><span>Email nursing admissions at each school. Use the questions below.</span></label>
+              <label class="task"><input type="checkbox" data-task="advising"><span>Ask for the exact required-class sheet before taking any class.</span></label>
+              <label class="task"><input type="checkbox" data-task="fafsa"><span>Confirm whether online classes and online science labs count.</span></label>
+              <label class="task"><input type="checkbox" data-task="teas"><span>Compare deadlines, costs, entrance-test rules, seats, and clinical locations.</span></label>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3>Stop before enrolling</h3>
+            <p>Do not enroll unless the school confirms all of this in writing:</p>
+            <div class="detail-body" style="padding:12px 0 0">
+              <ul>
+                <li>The exact campus and track trains new RNs.</li>
+                <li>It is on the Tennessee Board nursing school list.</li>
+                <li>Graduation qualifies her to apply for Tennessee RN licensure by exam.</li>
+                <li>Total cost includes fees, books, uniforms, testing, health requirements, NCLEX, license, and travel.</li>
+                <li>Labs, practice sessions, and clinicals are clearly explained.</li>
+                <li>The school places students in clinicals.</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -983,13 +1087,13 @@
       <div class="wrap">
         <div class="section-head">
           <h2>Path finder</h2>
-          <p>Choose the situation that matches her. The recommendation below changes instantly.</p>
+          <p>Pick the situation that matches her.</p>
         </div>
 
         <div class="toolbox">
           <div class="panel">
             <h3>Pick a situation</h3>
-            <p>Start with "No nursing license yet" unless she already has a healthcare license or a prior bachelor degree.</p>
+            <p>Use "No nursing license yet" for her current situation.</p>
             <div class="scenario-grid" role="group" aria-label="Situation choices">
               <button class="scenario-btn" type="button" data-scenario="none" aria-pressed="true">No nursing license yet</button>
               <button class="scenario-btn" type="button" data-scenario="lpn" aria-pressed="false">Already an LPN</button>
@@ -998,14 +1102,22 @@
               <button class="scenario-btn" type="button" data-scenario="fast" aria-pressed="false">Fastest is priority</button>
               <button class="scenario-btn" type="button" data-scenario="bsn" aria-pressed="false">BSN is long-term goal</button>
             </div>
-            <div class="scenario-output" id="scenarioOutput" aria-live="polite"></div>
+            <div class="scenario-output" id="scenarioOutput" aria-live="polite">
+              <h3>Current situation: no nursing license yet</h3>
+              <p>Start with a Tennessee Board-approved RN-starting program. A nearby public community college AAS/ADN program is the default target.</p>
+              <ul>
+                <li>Do not enroll in RN-to-BSN programs yet.</li>
+                <li>Take required classes only after the school confirms they count.</li>
+                <li>Expect in-person labs, practice sessions, and clinicals.</li>
+              </ul>
+            </div>
           </div>
 
           <aside class="panel">
             <h3>Rule of thumb</h3>
             <p>
-              The program must be a pre-licensure RN program approved for Tennessee RN licensure.
-              A general bachelor degree, healthcare degree, or RN-to-BSN page is not enough.
+              The program must be approved to train new RNs in Tennessee.
+              A general degree or RN-to-BSN page is not enough.
             </p>
             <div class="link-row" style="margin-top:16px">
               <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/Prof%20Master%20List.pdf" target="_blank" rel="noopener">Open TN Board list</a>
@@ -1019,8 +1131,8 @@
     <section id="compare">
       <div class="wrap">
         <div class="section-head">
-          <h2>Compare the realistic options</h2>
-          <p>Use the search and filters to narrow the research. Direct links open in a new tab.</p>
+          <h2>Options, ranked</h2>
+          <p>Use search or filters if you want to narrow the list.</p>
         </div>
 
         <div class="panel search-panel">
@@ -1029,32 +1141,34 @@
             <input id="optionSearch" type="search" placeholder="Search options, costs, timelines, risks..." aria-label="Search options">
           </div>
           <div class="filter-row" role="group" aria-label="Option filters">
-            <button class="filter-btn active" type="button" data-filter="all">All</button>
-            <button class="filter-btn" type="button" data-filter="recommended">Recommended</button>
-            <button class="filter-btn" type="button" data-filter="cheap">Cheapest</button>
-            <button class="filter-btn" type="button" data-filter="hybrid">Online/hybrid</button>
-            <button class="filter-btn" type="button" data-filter="avoid">Avoid now</button>
-            <button class="filter-btn" type="button" data-filter="later">Later only</button>
+            <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-btn" type="button" data-filter="recommended" aria-pressed="false">Recommended</button>
+            <button class="filter-btn" type="button" data-filter="cheap" aria-pressed="false">Cheapest</button>
+            <button class="filter-btn" type="button" data-filter="hybrid" aria-pressed="false">Online/hybrid</button>
+            <button class="filter-btn" type="button" data-filter="avoid" aria-pressed="false">Avoid now</button>
+            <button class="filter-btn" type="button" data-filter="later" aria-pressed="false">Later only</button>
           </div>
         </div>
 
-        <div class="option-grid" id="optionGrid">
+        <p class="empty-results hidden" id="emptyResults">No options match that search and filter. Try "All" or clear the search.</p>
+
+        <div class="option-grid">
           <article class="option-card" data-tags="recommended cheap adn aas community college legitimate nclex fastest practical public">
             <div>
               <span class="tag good">Best overall</span>
               <h3>Public Tennessee community college ADN/AAS</h3>
-              <p>Best first target from zero credits. Use nearby Board-approved programs, take exact prerequisites, apply to several cohorts, then sit for NCLEX-RN after graduation.</p>
+              <p>Best first choice from zero credits if the exact campus and track are Board-approved.</p>
             </div>
             <div class="option-meta">
               <div class="meta-item"><small>Cost</small><strong>Often lowest; Nashville State example about $10,000 before aid details.</strong></div>
               <div class="meta-item"><small>Timeline</small><strong>Often 2.5 to 3.5 years from zero credits.</strong></div>
               <div class="meta-item"><small>Online</small><strong>Prereqs may be online; nursing sequence is not fully online.</strong></div>
-              <div class="meta-item"><small>Main risk</small><strong>Competitive admission, TEAS/HESI, limited seats, clinical schedule.</strong></div>
+              <div class="meta-item"><small>Main risk</small><strong>Hard to get in, entrance tests, limited spots, and in-person training times.</strong></div>
             </div>
             <div class="link-row">
               <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/Prof%20Master%20List.pdf" target="_blank" rel="noopener">TN Board list</a>
               <a href="https://www.nscc.edu/academics/programs/nursing/index.php" target="_blank" rel="noopener">Nashville State</a>
-              <a href="https://www.chattanoogastate.edu/nursing" target="_blank" rel="noopener">Chattanooga State</a>
+              <a href="https://www.chattanoogastate.edu/nursing-traditional" target="_blank" rel="noopener">Chattanooga State</a>
               <a href="https://www.clevelandstatecc.edu/academic-programs/healthcare/nursing/" target="_blank" rel="noopener">Cleveland State</a>
             </div>
           </article>
@@ -1062,8 +1176,8 @@
           <article class="option-card" data-tags="bsn public legitimate board approved four year expensive university">
             <div>
               <span class="tag info">Clean degree route</span>
-              <h3>Public in-state pre-licensure BSN</h3>
-              <p>Legitimate if the exact school and track are Board-approved. Usually cleaner for a BSN goal, but from zero credits it is usually slower and more expensive than ADN/AAS first.</p>
+              <h3>Public in-state starter BSN</h3>
+              <p>Legitimate if Board-approved, but usually slower and more expensive than ADN/AAS first.</p>
             </div>
             <div class="option-meta">
               <div class="meta-item"><small>Cost</small><strong>Usually much higher than community college.</strong></div>
@@ -1082,7 +1196,7 @@
             <div>
               <span class="tag warn">Investigate carefully</span>
               <h3>WGU Tennessee prelicensure BSN</h3>
-              <p>Most obvious online/hybrid pre-licensure option to check. It still requires in-person learning labs and clinical rotations, and the standard path appears far more expensive than community college.</p>
+              <p>Worth checking for online coursework, but still has in-person labs/clinicals and higher cost.</p>
             </div>
             <div class="option-meta">
               <div class="meta-item"><small>Cost</small><strong>WGU lists $8,755 per 6-month term; standard 8-term path is about $71,640 before extras.</strong></div>
@@ -1100,7 +1214,7 @@
             <div>
               <span class="tag warn">Only if income first</span>
               <h3>LPN first, then LPN-to-RN bridge</h3>
-              <p>Useful only if she wants a faster practical-nursing credential and income before RN. It adds another license, another admission process, and does not directly lead to NCLEX-RN.</p>
+              <p>Useful only if she needs practical-nursing income before becoming an RN.</p>
             </div>
             <div class="option-meta">
               <div class="meta-item"><small>Cost</small><strong>TCAT Nashville practical nursing example lists about $4,461 tuition/fees plus supplies.</strong></div>
@@ -1114,17 +1228,17 @@
             </div>
           </article>
 
-          <article class="option-card" data-tags="avoid charter oak rn to bsn later nonstarter tennessee enrollment non rn">
+          <article class="option-card" data-tags="avoid charter oak rn to bsn nonstarter tennessee enrollment non rn">
             <div>
               <span class="tag bad">Avoid now</span>
               <h3>Charter Oak RN/ADN-to-BSN</h3>
-              <p>Not the right starting path. It is a BSN completion program for people who already completed an accredited RN program and have, or soon prove, RN licensure.</p>
+              <p>Not a starter RN path. It is for people who already completed an RN program and have, or soon prove, RN licensure.</p>
             </div>
             <div class="option-meta">
               <div class="meta-item"><small>Cost</small><strong>Major-only estimate about $9,389 before semester fees and remaining credits.</strong></div>
               <div class="meta-item"><small>Timeline</small><strong>Not applicable until she is already RN-eligible/licensed.</strong></div>
               <div class="meta-item"><small>Online</small><strong>Coursework online, but practicum requirements exist.</strong></div>
-              <div class="meta-item"><small>Main risk</small><strong>Does not create NCLEX-RN eligibility; catalog says TN nursing-program students may not currently enroll.</strong></div>
+              <div class="meta-item"><small>Main risk</small><strong>Does not qualify her for the RN licensing exam; Tennessee enrollment may also be blocked.</strong></div>
             </div>
             <div class="link-row">
               <a href="https://www.charteroak.edu/rn-adn-to-bsn/" target="_blank" rel="noopener">Charter Oak page</a>
@@ -1137,7 +1251,7 @@
             <div>
               <span class="tag future">Later only</span>
               <h3>Online RN-to-BSN after RN license</h3>
-              <p>Good after she becomes an RN through ADN/AAS. Compare Tennessee public options and employer tuition assistance after the RN job exists.</p>
+              <p>Good after RN licensure, especially if an employer helps pay tuition.</p>
             </div>
             <div class="option-meta">
               <div class="meta-item"><small>Cost</small><strong>Varies; employer reimbursement can matter a lot.</strong></div>
@@ -1153,68 +1267,11 @@
       </div>
     </section>
 
-    <section id="next">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>What to do next</h2>
-          <p>This is the practical checklist. Check items off as they get done; your progress stays saved in this browser.</p>
-        </div>
-
-        <div class="next-steps">
-          <div class="panel">
-            <h3>Next 7 days</h3>
-            <div class="task-list">
-              <label class="task"><input type="checkbox" data-task="board-list"><span><strong>Open the Tennessee Board school list.</strong><br>Write down every AAS/ADN/ASN program within realistic driving distance.</span></label>
-              <label class="task"><input type="checkbox" data-task="targets"><span><strong>Pick 3 to 5 target programs.</strong><br>Do not rely on one school. Compare deadlines, seats, costs, and prerequisites.</span></label>
-              <label class="task"><input type="checkbox" data-task="advising"><span><strong>Book nursing advising before taking classes.</strong><br>Ask for the exact prerequisite sheet and whether online science labs count.</span></label>
-              <label class="task"><input type="checkbox" data-task="fafsa"><span><strong>File FAFSA and check Tennessee aid.</strong><br>Look at Tennessee Promise, Tennessee Reconnect, and Pell eligibility.</span></label>
-              <label class="task"><input type="checkbox" data-task="teas"><span><strong>Ask about TEAS/HESI early.</strong><br>Get minimum score, competitive score, allowed attempts, and expiration rules.</span></label>
-            </div>
-          </div>
-
-          <div class="panel">
-            <h3>Critical checks before enrollment</h3>
-            <details open>
-              <summary>Program legitimacy</summary>
-              <div class="detail-body">
-                <ul>
-                  <li>Is the exact program pre-licensure RN?</li>
-                  <li>Is the exact campus/track on the Tennessee Board list?</li>
-                  <li>Does graduation meet the education requirement for Tennessee RN licensure by exam?</li>
-                  <li>Is it nursing-accredited by ACEN, CCNE, or CNEA?</li>
-                </ul>
-              </div>
-            </details>
-            <details>
-              <summary>Money</summary>
-              <div class="detail-body">
-                <ul>
-                  <li>Ask for total cost, not just tuition.</li>
-                  <li>Include books, uniforms, testing, CPR, immunizations, background check, drug screen, NCLEX, licensure, and travel.</li>
-                  <li>Ask which costs are not covered by Promise/ReConnect/Pell.</li>
-                </ul>
-              </div>
-            </details>
-            <details>
-              <summary>Schedule and clinicals</summary>
-              <div class="detail-body">
-                <ul>
-                  <li>Where are labs, simulation, and clinical rotations?</li>
-                  <li>Can clinicals be days, nights, weekends, or variable?</li>
-                  <li>Does the school place students, or must students find clinical sites?</li>
-                </ul>
-              </div>
-            </details>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <section id="questions">
       <div class="wrap">
         <div class="section-head">
-          <h2>Questions to ask admissions</h2>
-          <p>Use these before paying an application fee or taking prerequisites. Ask for answers in writing.</p>
+          <h2>Email these questions to each school</h2>
+          <p>Send this before paying an application fee or taking classes. Ask them to reply in writing.</p>
         </div>
 
         <div class="question-toolbar">
@@ -1224,48 +1281,23 @@
 
         <div class="question-list">
           <article class="question-box">
-            <h3>Legitimacy and licensure</h3>
+            <h3>Essential questions</h3>
             <ol>
-              <li>Is this exact program and track pre-licensure RN, or is it RN-to-BSN only?</li>
+              <li>Is this exact campus and track a program for training new RNs, not RN-to-BSN only?</li>
               <li>What exact degree is awarded: AAS, ASN, ADN, BSN, or something else?</li>
-              <li>Does completing this program meet the educational requirement to apply for Tennessee RN licensure by examination?</li>
-              <li>Is this exact campus and track listed on the Tennessee Board of Nursing Professional Nursing School List?</li>
-              <li>What is the current Tennessee Board approval status?</li>
-              <li>Is the program accredited by ACEN, CCNE, or CNEA, and when is the next review?</li>
+              <li>Is this exact campus and track on the Tennessee Board nursing school list, and what is its current approval status?</li>
+              <li>Does graduation qualify me to apply for Tennessee RN licensure by exam and take the NCLEX-RN?</li>
+              <li>Is the program accredited by a recognized nursing accreditor, such as ACEN, CCNE, or CNEA?</li>
               <li>What was the most recent first-time NCLEX-RN pass rate?</li>
-              <li>What is the completion or attrition rate for the most recent cohort?</li>
-            </ol>
-          </article>
-
-          <article class="question-box">
-            <h3>Admissions and prerequisites</h3>
-            <ol start="9">
-              <li>What prerequisites are required before applying?</li>
-              <li>Which prerequisites can be taken online, and are online science labs accepted?</li>
-              <li>Is TN eCampus accepted for any prerequisites?</li>
-              <li>What minimum grade is required for each prerequisite?</li>
-              <li>Do science courses expire after a certain number of years?</li>
-              <li>What TEAS/HESI score is required, and what score was competitive for the last accepted cohort?</li>
-              <li>How many seats are available per cohort?</li>
-              <li>Is admission points-based, waitlist-based, lottery-based, or first-qualified/first-admitted?</li>
-              <li>What are the exact application deadlines and next available start dates?</li>
-            </ol>
-          </article>
-
-          <article class="question-box">
-            <h3>Cost, clinicals, and online claims</h3>
-            <ol start="18">
-              <li>What is the total cost including tuition, fees, textbooks, uniforms, testing, background check, drug screen, CPR, immunizations, clinical tracker, NCLEX, and licensure?</li>
-              <li>Which costs are not covered by Tennessee Promise, ReConnect, or Pell?</li>
-              <li>Where are labs, simulations, and clinical rotations held?</li>
-              <li>Are clinical placements guaranteed by the school, or must students find their own?</li>
-              <li>How far can clinical sites be from the student's home?</li>
-              <li>Are clinicals days, evenings, weekends, or variable?</li>
-              <li>Can a student realistically work during the program?</li>
-              <li>For online/hybrid programs: what parts are asynchronous, live online, and in person?</li>
-              <li>For RN-to-BSN programs: do you require an active RN license before enrollment or before continued enrollment?</li>
+              <li>What required classes must I finish before applying, and what minimum grades are needed?</li>
+              <li>Are online required classes, online science labs, or TN eCampus classes accepted?</li>
+              <li>Is TEAS or HESI required? What score is required, and what score was competitive last cycle?</li>
+              <li>What are the next deadlines, start dates, number of seats, and admission method?</li>
+              <li>What is the total estimated cost, including fees and required extras?</li>
+              <li>Where are labs, practice sessions, and clinicals? Are clinicals days, evenings, weekends, or variable?</li>
               <li>Can you send all answers above in writing before enrollment?</li>
             </ol>
+            <p>Only ask RN-to-BSN questions if the program is Charter Oak or another completion program.</p>
           </article>
         </div>
       </div>
@@ -1281,62 +1313,62 @@
         <div class="sources">
           <div class="source-row">
             <div><strong>Tennessee Board of Nursing - licensure</strong><span>Explains Tennessee nursing licensure and NCLEX eligibility basics.</span></div>
-            <a href="https://www.tn.gov/health/licensure/nurs.html" target="_blank" rel="noopener">Open</a>
+            <a href="https://www.tn.gov/health/licensure/nurs.html" target="_blank" rel="noopener">Licensure</a>
           </div>
           <div class="source-row">
             <div><strong>Tennessee Board Professional Nursing School List</strong><span>The key list to check exact Board-approved programs and tracks.</span></div>
-            <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/Prof%20Master%20List.pdf" target="_blank" rel="noopener">Open PDF</a>
+            <a href="https://www.tn.gov/content/dam/tn/health/healthprofboards/nursing/educational-programs/Prof%20Master%20List.pdf" target="_blank" rel="noopener">Board list</a>
           </div>
           <div class="source-row">
             <div><strong>NCSBN - approval of nursing education programs</strong><span>Explains why Board-approved education matters for NCLEX eligibility.</span></div>
-            <a href="https://www.ncsbn.org/nursing-regulation/education/approval-of-nursing-education-programs.page" target="_blank" rel="noopener">Open</a>
+            <a href="https://www.ncsbn.org/nursing-regulation/education/approval-of-nursing-education-programs.page" target="_blank" rel="noopener">Approval</a>
           </div>
           <div class="source-row">
-            <div><strong>NCSBN - clinical instruction</strong><span>Explains why pre-licensure nursing requires real supervised clinical experience.</span></div>
-            <a href="https://www.ncsbn.org/nursing-regulation/education/clinical-instruction.page" target="_blank" rel="noopener">Open</a>
+            <div><strong>NCSBN - clinical instruction</strong><span>Explains why new-RN programs require real supervised clinical experience.</span></div>
+            <a href="https://www.ncsbn.org/papers/clinical-instruction-in-prelicensure-nursing-programs" target="_blank" rel="noopener">Clinicals</a>
           </div>
           <div class="source-row">
             <div><strong>Nashville State AAS Nursing</strong><span>Concrete low-cost Tennessee community college example.</span></div>
-            <a href="https://www.nscc.edu/academics/programs/nursing/index.php" target="_blank" rel="noopener">Open</a>
+            <a href="https://www.nscc.edu/academics/programs/nursing/index.php" target="_blank" rel="noopener">Nashville</a>
           </div>
           <div class="source-row">
             <div><strong>Chattanooga State Nursing</strong><span>Concrete AAS example with day/evening pathway details.</span></div>
-            <a href="https://www.chattanoogastate.edu/nursing" target="_blank" rel="noopener">Open</a>
+            <a href="https://www.chattanoogastate.edu/nursing-traditional" target="_blank" rel="noopener">Chattanooga</a>
           </div>
           <div class="source-row">
             <div><strong>Cleveland State AAS Nursing</strong><span>Concrete Tennessee associate-degree nursing example.</span></div>
-            <a href="https://www.clevelandstatecc.edu/academic-programs/healthcare/nursing/" target="_blank" rel="noopener">Open</a>
+            <a href="https://www.clevelandstatecc.edu/academic-programs/healthcare/nursing/" target="_blank" rel="noopener">Cleveland</a>
           </div>
           <div class="source-row">
             <div><strong>Tennessee Reconnect</strong><span>Adult last-dollar grant information.</span></div>
-            <a href="https://tnreconnect.gov/Tennessee-Reconnect-Grant" target="_blank" rel="noopener">Open</a>
+            <a href="https://tnreconnect.gov/Tennessee-Reconnect-Grant" target="_blank" rel="noopener">Reconnect</a>
           </div>
           <div class="source-row">
             <div><strong>Tennessee Promise</strong><span>Recent high-school graduate scholarship and mentoring information.</span></div>
-            <a href="https://www.tbr.edu/initiatives/tn-promise" target="_blank" rel="noopener">Open</a>
+            <a href="https://www.tbr.edu/initiatives/tn-promise" target="_blank" rel="noopener">Promise</a>
           </div>
           <div class="source-row">
-            <div><strong>WGU prelicensure BSN</strong><span>Hybrid/online pre-licensure option to verify carefully.</span></div>
-            <a href="https://www.wgu.edu/online-nursing-health-degrees/rn-prelicensure-nursing-bachelors-program.html" target="_blank" rel="noopener">Open</a>
+            <div><strong>WGU starter BSN</strong><span>Hybrid/online RN-starting option to verify carefully.</span></div>
+            <a href="https://www.wgu.edu/online-nursing-health-degrees/rn-prelicensure-nursing-bachelors-program.html" target="_blank" rel="noopener">WGU</a>
           </div>
           <div class="source-row">
             <div><strong>Charter Oak RN/ADN-to-BSN</strong><span>The program page that should be avoided as an initial RN path.</span></div>
-            <a href="https://www.charteroak.edu/rn-adn-to-bsn/" target="_blank" rel="noopener">Open</a>
+            <a href="https://www.charteroak.edu/rn-adn-to-bsn/" target="_blank" rel="noopener">Charter Oak</a>
           </div>
           <div class="source-row">
             <div><strong>Charter Oak nursing admission requirements</strong><span>Shows RN/program completion requirements for enrollment/continued enrollment.</span></div>
-            <a href="https://www.charteroak.edu/catalog/current/ug_admissions/nursing_adm_requirements.php" target="_blank" rel="noopener">Open</a>
+            <a href="https://www.charteroak.edu/catalog/current/ug_admissions/nursing_adm_requirements.php" target="_blank" rel="noopener">Admissions</a>
           </div>
           <div class="source-row">
             <div><strong>Charter Oak nursing catalog</strong><span>Includes practicum details and the Tennessee enrollment limitation noted in the research.</span></div>
-            <a href="https://www.charteroak.edu/catalog/current/undergraduate-programs-bachelors/nursing.php" target="_blank" rel="noopener">Open</a>
+            <a href="https://www.charteroak.edu/catalog/current/undergraduate-programs-bachelors/nursing.php" target="_blank" rel="noopener">Catalog</a>
           </div>
         </div>
 
-        <div class="footer">
+        <footer class="footer">
           <strong>Important:</strong> This page summarizes research; it is not a school admission decision or legal/regulatory advice.
           Before enrollment, confirm the current status in writing with the Tennessee Board of Nursing and the exact school, campus, and program track.
-        </div>
+        </footer>
       </div>
     </section>
   </main>
@@ -1347,11 +1379,11 @@
     const scenarios = {
       none: {
         title: "Current situation: no nursing license yet",
-        body: "Start with a Tennessee Board-approved pre-licensure RN program. The default target should be a nearby public community college AAS/ADN program.",
+        body: "Start with a Tennessee Board-approved RN-starting program. A nearby public community college AAS/ADN program is the default target.",
         bullets: [
           "Do not enroll in RN-to-BSN programs yet.",
-          "Take prerequisites only after the target nursing program confirms they count.",
-          "Expect in-person labs, simulation, and clinicals."
+          "Take required classes only after the school confirms they count.",
+          "Expect in-person labs, practice sessions, and clinicals."
         ]
       },
       lpn: {
@@ -1360,12 +1392,12 @@
         bullets: [
           "Confirm active LPN license requirements.",
           "Ask whether the bridge actually saves time.",
-          "Check prerequisites, work-hour rules, and clinical placement."
+          "Check required classes, work-hour rules, and clinical placement."
         ]
       },
       bachelors: {
         title: "If she already has a bachelor degree",
-        body: "Look at accelerated BSN or second-degree BSN programs, if prerequisites and cost work.",
+        body: "Look at accelerated BSN or second-degree BSN programs, if required classes and cost work.",
         bullets: [
           "This does not apply to the current high-school-only profile.",
           "Verify Board approval for the exact accelerated track.",
@@ -1383,9 +1415,9 @@
       },
       fast: {
         title: "If fastest realistic path is the priority",
-        body: "Apply to multiple Board-approved ADN/AAS programs with the earliest realistic cohort.",
+        body: "Apply to multiple Board-approved ADN/AAS programs with the earliest realistic start date.",
         bullets: [
-          "Prerequisite timing and application windows control speed.",
+          "Required-class timing and application windows control speed.",
           "Use WGU/private hybrid only after strict cost and approval verification.",
           "Do not trade legitimacy for speed."
         ]
@@ -1404,13 +1436,13 @@
     const summaryText =
 `Tennessee RN path summary:
 
-Charter Oak is not the right starting path for this person. It is an RN/ADN-to-BSN completion program, not a pre-licensure RN program. A Tennessee resident with high school education, zero college credits, no healthcare credentials, and no RN license should start with a Tennessee Board-approved pre-licensure RN program.
+Charter Oak is not the right starting path. It is an RN-to-BSN completion program, not a starter RN program. A Tennessee resident with zero college credits should start with a Tennessee Board-approved RN-starting program.
 
-Best first target: nearby public Tennessee community college AAS/ADN nursing programs. Take exact prerequisites only after nursing advising confirms them, apply to several programs, complete the in-person nursing sequence and clinicals, then apply for Tennessee RN licensure by exam and take NCLEX-RN.
+Best first target: nearby public Tennessee community college AAS/ADN nursing programs. Confirm the required classes, apply to several schools, complete labs and clinicals, then apply for Tennessee RN licensure by exam and take NCLEX-RN.
 
 Cheapest likely path: public community college ADN/AAS plus FAFSA, Tennessee Promise/ReConnect, and Pell if eligible.
 
-Online reality check: some prerequisites may be online, but legitimate pre-licensure RN programs require labs, simulation, and supervised clinical work.
+Online reality check: some required classes may be online, but real RN programs require in-person labs, practice sessions, and supervised patient-care training.
 
 After becoming an RN, compare online RN-to-BSN programs. Charter Oak might only be reconsidered later if Tennessee enrollment authorization and accreditation are current.`;
 
@@ -1440,7 +1472,21 @@ After becoming an RN, compare online RN-to-BSN programs. Charter Oak might only 
         await navigator.clipboard.writeText(text);
         showToast(label);
       } catch {
-        showToast("Copy failed");
+        const textArea = document.createElement("textarea");
+        textArea.value = text;
+        textArea.setAttribute("readonly", "");
+        textArea.style.position = "fixed";
+        textArea.style.left = "-9999px";
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+          document.execCommand("copy");
+          showToast(label);
+        } catch {
+          showToast("Copy failed");
+        } finally {
+          textArea.remove();
+        }
       }
     }
 
@@ -1460,19 +1506,27 @@ After becoming an RN, compare online RN-to-BSN programs. Charter Oak might only 
 
     function applyOptionFilters() {
       const query = searchInput.value.trim().toLowerCase();
+      let visibleCount = 0;
       optionCards.forEach(card => {
         const text = `${card.textContent} ${card.dataset.tags}`.toLowerCase();
         const matchesSearch = !query || text.includes(query);
         const matchesFilter = activeFilter === "all" || (card.dataset.tags || "").includes(activeFilter);
-        card.classList.toggle("hidden", !(matchesSearch && matchesFilter));
+        const isVisible = matchesSearch && matchesFilter;
+        card.classList.toggle("hidden", !isVisible);
+        if (isVisible) visibleCount += 1;
       });
+      document.getElementById("emptyResults").classList.toggle("hidden", visibleCount > 0);
     }
 
     document.querySelectorAll(".filter-btn").forEach(button => {
       button.addEventListener("click", () => {
         activeFilter = button.dataset.filter;
-        document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
+        document.querySelectorAll(".filter-btn").forEach(btn => {
+          btn.classList.remove("active");
+          btn.setAttribute("aria-pressed", "false");
+        });
         button.classList.add("active");
+        button.setAttribute("aria-pressed", "true");
         applyOptionFilters();
       });
     });
@@ -1486,9 +1540,17 @@ After becoming an RN, compare online RN-to-BSN programs. Charter Oak might only 
     const taskInputs = Array.from(document.querySelectorAll("[data-task]"));
     taskInputs.forEach(input => {
       const key = `tn-rn-path-task-${input.dataset.task}`;
-      input.checked = localStorage.getItem(key) === "true";
+      try {
+        input.checked = localStorage.getItem(key) === "true";
+      } catch {
+        input.checked = false;
+      }
       input.addEventListener("change", () => {
-        localStorage.setItem(key, input.checked ? "true" : "false");
+        try {
+          localStorage.setItem(key, input.checked ? "true" : "false");
+        } catch {
+          // Checkboxes still work for the current page view when storage is blocked.
+        }
       });
     });
   </script>
